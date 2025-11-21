@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haluzator - Dirigent vašeho vizuálního vesmíru</title>
+    <meta name="description" content="Hudební přehrávač pro vaše oči. Mixujte shadery, videa a 3D modely do hypnotické show v reálném čase.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=Calistoga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="img/Haluzator-logo.svg" alt="Haluzator" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="#features">Funkce</a>
+                <a href="#controls">Ovládání</a>
+                <a href="#download" class="btn btn-small">Stáhnout</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="glitch" data-text="Dirigent vašeho vizuálního vesmíru.">Dirigent vašeho vizuálního vesmíru.</h1>
+            <div class="showcase-placeholder">
+                <img src="img/Haluzator-screen.png" alt="Haluzator screenshot" class="screenshot-img">
+            </div>
+            <p class="hero-subtitle">Hudební přehrávač pro vaše oči. Mixujte shadery, videa a 3D modely do hypnotické show v reálném čase. Pro Windows i web.</p>
+            <div class="cta-group">
+                <a href="https://github.com/LukasWana/Haluzator-stable/releases/download/release-1.0.0/Haluzator-0.0.0-portable.exe" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Stáhnout pro Windows</a>
+                <a href="https://haluzator-shaders-images-videos-3d-html-759158123051.us-west1.run.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Vyzkoušet v prohlížeči</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <h2 class="section-title">Co je to Haluzator?</h2>
+            <blockquote class="quote">
+                "Představte si Spotify, ale místo písniček mícháte vizuální extázi."
+            </blockquote>
+            <p class="intro-text">
+                Haluzator je ultimátní nástroj pro <strong>VJing, umělecké instalace a vizuální experimenty</strong>. Zapomeňte na složitý render. Tady se vše děje <strong>TEĎ</strong>. Vyberte efekt, nastavte sekvenci a nechte grafiku pulzovat do rytmu hudby.
+            </p>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Proč si ho zamilujete?</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icon">🎨</div>
+                    <h3>Nekonečná knihovna shaderů</h3>
+                    <p>Více než <strong>150 předpřipravených efektů</strong>. Od abstraktních fraktálů přes částicové bouře až po retro glitch art.</p>
+                    <ul>
+                        <li>Chcete víc? Napište si vlastní kód v GLSL.</li>
+                        <li>Okamžitý náhled: Vše vidíte v reálném čase.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="icon">📂</div>
+                    <h3>Totální svoboda médií</h3>
+                    <p>Nenechte se omezovat. Haluzator spolkne všechno:</p>
+                    <ul>
+                        <li><strong>Obrázky & Videa:</strong> Remixujte své fotky a klipy.</li>
+                        <li><strong>3D Modely (.obj):</strong> Vdechněte život prostorovým objektům.</li>
+                        <li><strong>HTML Overlay:</strong> Přidejte vlastní vrstvu s texty.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="icon">🎹</div>
+                    <h3>Sekvencer, který má groove</h3>
+                    <p>Funguje jako váš oblíbený drum machine.</p>
+                    <ul>
+                        <li><strong>8 Stránek:</strong> Přepínejte mezi náladami celé show.</li>
+                        <li><strong>Rytmické kroky:</strong> 4 až 64 kroků pro dokonalou synchronizaci.</li>
+                        <li><strong>Looping:</strong> Zacyklete ty nejlepší momenty.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="controls" class="controls">
+        <div class="container">
+            <h2 class="section-title">Ovládací prvky a funkce</h2>
+            <p class="section-subtitle">Kompletní přehled všech tlačítek a funkcí v hlavním panelu aplikace. Každé tlačítko vám dává kontrolu nad vizuální show:</p>
+
+            <div class="buttons-showcase">
+                <img src="img/Haluzator-buttons.png" alt="Haluzator ovládací tlačítka" class="buttons-image">
+                <div class="buttons-description">
+                    <div class="button-item">
+                        <h4>▶ Play / ❚❚ Pause</h4>
+                        <p>Spusťte nebo pozastavte přehrávání vizuálů. Klávesová zkratka: <strong>Mezerník</strong></p>
+                    </div>
+                    <div class="button-item">
+                        <h4>🎤 Mikrofon</h4>
+                        <p>Zapněte nebo vypněte audio vstup z mikrofonu pro audio-reaktivní efekty. Vizuály reagují na hudbu v reálném čase.</p>
+                    </div>
+                    <div class="button-item">
+                        <h4>💾 Uložit</h4>
+                        <p>Uložte celou vaši session včetně všech efektů, médií a nastavení do jednoho souboru. Všechna data zůstávají na vašem zařízení.</p>
+                    </div>
+                    <div class="button-item">
+                        <h4>📂 Načíst</h4>
+                        <p>Načtěte dříve uloženou session. Obnovte všechny vaše efekty, sekvence a nastavení jedním kliknutím.</p>
+                    </div>
+                    <div class="button-item">
+                        <h4>👁️ Skrýt UI prvky</h4>
+                        <p>Skryjte nebo zobrazte ovládací panely (Controls, Sequencer, Right Panel). Ideální pro čistý fullscreen režim nebo dual screen setup.</p>
+                    </div>
+                    <div class="button-item">
+                        <h4>🎹 MIDI</h4>
+                        <p>Připojte MIDI kontroler nebo klávesy pro profesionální VJ ovládání. Mapujte tlačítka a fadery na všechny funkce aplikace.</p>
+                    </div>
+                    <div class="button-item">
+                        <h4>? Nápověda</h4>
+                        <p>Otevřete nápovědu s přehledem všech klávesových zkratek, funkcí a tipů pro efektivní použití.</p>
+                    </div>
+                    <div class="button-item">
+                        <h4>⛶ Fullscreen</h4>
+                        <p>Přepněte do celoobrazovkového režimu pro perfektní VJ show bez rušivých prvků.</p>
+                    </div>
+                    <div class="button-item">
+                        <h4>📺 Projekční okno</h4>
+                        <p>Otevřete samostatné okno pro projektor, zatímco ovládáte z hlavního okna. Perfektní pro živé vystoupení.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="control-item">
+                    <h4>🎛️ Atmosféra</h4>
+                    <p>Blur, Glow, Shadows & Highlights.</p>
+                </div>
+                <div class="control-item">
+                    <h4>🌈 Barvy</h4>
+                    <p>Hrajte si s Hue, Sytostí a Chroma efekty.</p>
+                </div>
+                <div class="control-item">
+                    <h4>✨ Magie</h4>
+                    <p>Zapněte <strong>Mandalu</strong> pro symetrii nebo <strong>Particles</strong> pro rozpad reality.</p>
+                </div>
+                <div class="control-item">
+                    <h4>🔊 Audio Reaktivita</h4>
+                    <p>Nechte vizuály skákat podle basů a tempa hudby.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="performance">
+        <div class="container">
+            <h2 class="section-title">Stvořeno pro Stage</h2>
+            <p class="section-subtitle">Když jste na pódiu, nemáte čas klikat myší. Haluzator je postaven pro rychlost.</p>
+            <div class="grid-3">
+                <div class="feature-box">
+                    <h3>⌨️ Hrajte na klávesnici</h3>
+                    <p>Q-W-E-R... přepínejte kroky jako klavírista.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🎚️ MIDI Support</h3>
+                    <p>Připojte svůj oblíbený kontroler nebo klávesy a buďte skutečný VJ.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>📽️ Dual Screen</h3>
+                    <p>Ovládací panel u vás, vizuální orgie na projektoru. Fullscreen mód je samozřejmostí.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Jak to funguje?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Vyber</h3>
+                    <p>Zvol efekt, video nebo 3D model z knihovny.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Nastav</h3>
+                    <p>Umísti ho na časovou osu sekvenceru.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Hraj</h3>
+                    <p>Spusť <em>Spacebarem</em> a moduluj efekty za běhu!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="users">
+        <div class="container">
+            <h2 class="section-title">Kdo Haluzator používá?</h2>
+            <ul class="user-list">
+                <li><strong>VJs & Hudebníci:</strong> Oživte své koncerty.</li>
+                <li><strong>Digitální umělci:</strong> Tvořte instalace, které berou dech.</li>
+                <li><strong>Kreativci:</strong> Experimentujte s grafikou bez hranic.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="download" class="cta-final">
+        <div class="container">
+            <h2 class="section-title">Připraveni na show?</h2>
+            <p>Uložte si svou session, sbalte notebook a vyrazte. Všechna nastavení, efekty a média se ukládají do jednoho souboru.</p>
+
+            <div class="download-box">
+                <h3>Stáhněte si Haluzator</h3>
+                <p>Verze pro Windows | Webová verze</p>
+                <a href="https://drive.google.com/file/d/1MRPBd9J3jOMXlJcE0ikFvrEtm31MpQXi/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Stáhnout nyní</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Haluzator. Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

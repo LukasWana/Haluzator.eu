@@ -1,0 +1,9 @@
+# Ignorovat vsechny soubory a slozky
+*
+
+# Vyjimka pro slozku web a jeji obsah
+!web/
+!web/**
+
+# Vyjimka pro samotny .gitignore
+!.gitignore
