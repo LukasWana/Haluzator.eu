@@ -37,6 +37,7 @@
                 <a href="https://github.com/LukasWana/Haluzator-stable/releases/download/release-1.0.0/Haluzator-0.0.0-portable.exe" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Stáhnout pro Windows</a>
                 <a href="https://haluzator-shaders-images-videos-3d-html-759158123051.us-west1.run.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Vyzkoušet v prohlížeči</a>
             </div>
+            <div class="test-mode-banner">Funkční prototyp v testovacím režimu</div>
         </div>
     </header>
 
@@ -55,11 +56,31 @@
             <h2 class="section-title liquid">Proč si ho zamilujete?</h2>
             <div class="grid-3">
                 <div class="card">
-                    <div class="icon">
-                        <svg class="icon-svg-large" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            <path d="M7 7h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
-                        </svg>
+                    <div class="card-graphics">
+                        <!-- Grafika 1: Fotka -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="15" width="60" height="50" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="35" cy="30" r="5" fill="currentColor" opacity="0.6"/>
+                                <path d="M20 50l15-10 10 8 15-12 10 14v6H20v-6z" fill="currentColor" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 2: Video -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="25" y="20" width="50" height="35" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M40 35l15 10-15 10V35z" fill="currentColor" opacity="0.8"/>
+                                <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 3: Drag & Drop -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="30" width="40" height="30" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M35 40h30M35 45h20M35 50h25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M20 20l10 10-10 10M80 20l-10 10 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                     </div>
                     <h3>Nahrajte své fotky a videa</h3>
                     <p>Hlavní účel aplikace: <strong>promítat vaše vlastní obsahy</strong>. Nahrajte fotky z dovolené, videa z oslav nebo jakýkoliv jiný obsah a proměňte ho v úžasnou vizuální show.</p>
@@ -70,13 +91,46 @@
                     </ul>
                 </div>
                 <div class="card">
-                    <div class="icon">
-                        <svg class="icon-svg-large" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/>
-                        </svg>
+                    <div class="card-graphics">
+                        <!-- Grafika 1: Shader -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
+                                <circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+                                <path d="M50 20 Q70 50 50 80 Q30 50 50 20" fill="currentColor" opacity="0.2"/>
+                                <path d="M20 50 Q50 30 80 50 Q50 70 20 50" fill="currentColor" opacity="0.2"/>
+                                <circle cx="50" cy="50" r="3" fill="currentColor" opacity="0.8"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 2: 3D Model -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50 20 L70 35 L50 50 L30 35 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M50 50 L70 65 L50 80 L30 65 Z" fill="currentColor" opacity="0.4" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M50 20 L50 50 M70 35 L70 65 M30 35 L30 65" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 3: Fraktál v kruhu -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                                <!-- Fraktální spirálový vzor -->
+                                <path d="M50 50 L50 15 A35 35 0 0 1 85 50 Z" fill="currentColor" opacity="0.3"/>
+                                <path d="M50 50 L85 50 A35 35 0 0 1 50 85 Z" fill="currentColor" opacity="0.4"/>
+                                <path d="M50 50 L50 85 A35 35 0 0 1 15 50 Z" fill="currentColor" opacity="0.3"/>
+                                <path d="M50 50 L15 50 A35 35 0 0 1 50 15 Z" fill="currentColor" opacity="0.4"/>
+                                <!-- Vnitřní fraktální struktura -->
+                                <path d="M50 50 L50 30 A20 20 0 0 1 70 50 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M50 50 L70 50 A20 20 0 0 1 50 70 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M50 50 L50 70 A20 20 0 0 1 30 50 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M50 50 L30 50 A20 20 0 0 1 50 30 Z" fill="currentColor" opacity="0.5"/>
+                                <!-- Střed -->
+                                <circle cx="50" cy="50" r="4" fill="currentColor" opacity="0.8"/>
+                            </svg>
+                        </div>
                     </div>
                     <h3>150+ vizuálních efektů</h3>
-                    <p>Přidejte profesionální efekty na své fotky a videa:</p>
+                    <p>Přidejte profesionální efekty díky dynamickým shaderům – pokročilým GPU filtrům pro real-time transformaci obrazu. Kaleidoskopy, audio-reaktivní efekty a abstraktní vizuály, vše plynule a bez zpomalení.</p>
                     <ul>
                         <li><strong>Shadery:</strong> Více než 150 předpřipravených efektů pro každý vkus</li>
                         <li><strong>3D Modely:</strong> Volitelně přidejte 3D objekty (.obj)</li>
@@ -84,13 +138,44 @@
                     </ul>
                 </div>
                 <div class="card">
-                    <div class="icon">
-                        <svg class="icon-svg-large" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3 3h18v4H3zm0 7h18v4H3zm0 7h18v4H3z"/>
-                        </svg>
+                    <div class="card-graphics">
+                        <!-- Grafika 1: Televize -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="25" y="20" width="50" height="35" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <rect x="30" y="25" width="40" height="25" fill="currentColor" opacity="0.1"/>
+                                <circle cx="50" cy="37" r="3" fill="currentColor" opacity="0.4"/>
+                                <rect x="35" cy="45" y="45" width="30" height="3" rx="1" fill="currentColor" opacity="0.3"/>
+                                <rect x="20" y="58" width="60" height="8" rx="1" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="35" cy="62" r="1.5" fill="currentColor" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 2: Projektor -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="35" width="40" height="25" rx="2" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="50" cy="47" r="8" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="50" cy="47" r="4" fill="currentColor" opacity="0.5"/>
+                                <rect x="25" y="30" width="50" height="5" rx="1" fill="currentColor" opacity="0.4"/>
+                                <path d="M35 60 L50 70 L65 60" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+                                <rect x="40" y="72" width="20" height="3" rx="1" fill="currentColor" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 3: Počítač -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="25" width="60" height="40" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <rect x="25" y="30" width="50" height="30" fill="currentColor" opacity="0.1"/>
+                                <rect x="30" y="35" width="40" height="20" rx="1" fill="currentColor" opacity="0.15"/>
+                                <circle cx="50" cy="45" r="2" fill="currentColor" opacity="0.4"/>
+                                <rect x="35" y="50" width="30" height="2" rx="1" fill="currentColor" opacity="0.3"/>
+                                <rect x="40" y="55" width="20" height="2" rx="1" fill="currentColor" opacity="0.3"/>
+                                <rect x="35" y="68" width="30" height="4" rx="1" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3>Sekvencer pro domácí show</h3>
-                    <p>Vytvářejte plynulé přechody mezi vašimi médii.</p>
+                    <h3>Visual Show Mixer</h3>
+                    <p>Vytvářejte plynulé přechody mezi vašimi médii s crossfade efekty, vrstvením a různými blend režimy. Mixujte videa, fotky a shadery v reálném čase pro profesionální vizuální flow.</p>
                     <ul>
                         <li><strong>8 Stránek:</strong> Přepínejte mezi různými částmi vaší show</li>
                         <li><strong>Rytmické kroky:</strong> Synchronizujte s hudbou</li>
@@ -266,8 +351,19 @@
                     <div class="feature-card-content">
                         <h3>
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                <path d="M7 7h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1" fill="none"/>
+                                <!-- Fraktální spirálový vzor -->
+                                <path d="M12 12 L12 2 A10 10 0 0 1 22 12 Z" fill="currentColor" opacity="0.3"/>
+                                <path d="M12 12 L22 12 A10 10 0 0 1 12 22 Z" fill="currentColor" opacity="0.4"/>
+                                <path d="M12 12 L12 22 A10 10 0 0 1 2 12 Z" fill="currentColor" opacity="0.3"/>
+                                <path d="M12 12 L2 12 A10 10 0 0 1 12 2 Z" fill="currentColor" opacity="0.4"/>
+                                <!-- Vnitřní fraktální struktura -->
+                                <path d="M12 12 L12 7 A5 5 0 0 1 17 12 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M12 12 L17 12 A5 5 0 0 1 12 17 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M12 12 L12 17 A5 5 0 0 1 7 12 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M12 12 L7 12 A5 5 0 0 1 12 7 Z" fill="currentColor" opacity="0.5"/>
+                                <!-- Střed -->
+                                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
                             </svg>
                             Knihovna Shaderů
                         </h3>
@@ -289,7 +385,16 @@
                     <div class="feature-card-content">
                         <h3>
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2h-8l-2-2z"/>
+                                <!-- Uživatelský avatar -->
+                                <circle cx="10" cy="7" r="2.5" fill="currentColor" opacity="0.9"/>
+                                <path d="M5 19c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                                <!-- Uživatelské médium (fotka/video) -->
+                                <rect x="14" y="10" width="5" height="4" rx="0.5" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1"/>
+                                <circle cx="16" cy="11.5" r="0.6" fill="currentColor" opacity="0.5"/>
+                                <path d="M14.5 13.5l1.5-1 1.5 1v1.5h-3v-1.5z" fill="currentColor" opacity="0.5"/>
+                                <!-- Plus ikona pro přidání -->
+                                <circle cx="18.5" cy="8.5" r="2" fill="currentColor" opacity="0.9"/>
+                                <path d="M18.5 7.5v2M17.5 8.5h2" stroke="#0a0a0a" stroke-width="1.2" stroke-linecap="round"/>
                             </svg>
                             Knihovna Médií
                         </h3>
