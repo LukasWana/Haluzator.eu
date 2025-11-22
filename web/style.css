@@ -1948,7 +1948,7 @@ footer {
 
     /* Ensure feature card images are visible on mobile */
     .feature-card-image {
-        min-height: 200px;
+        min-height: auto !important;
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
