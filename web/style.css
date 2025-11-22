@@ -1098,6 +1098,33 @@ footer {
     z-index: 2;
 }
 
+.footer-contacts {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--accent-primary);
+}
+
+.footer-separator {
+    color: #444;
+}
+
+.footer-email {
+    cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     /* Remove max-height restrictions on mobile for content elements */

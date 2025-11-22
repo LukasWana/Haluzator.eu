@@ -157,7 +157,9 @@ Default language: English
             'download.button': 'Download now',
 
             // Footer
-            'footer.copyright': '© 2025 Haluzator. All rights reserved.'
+            'footer.copyright': '© 2025 Haluzator. All rights reserved.',
+            'footer.facebook': 'Facebook',
+            'footer.email': 'Email'
         },
         cs: {
             // Meta
@@ -308,7 +310,9 @@ Default language: English
             'download.button': 'Stáhnout nyní',
 
             // Footer
-            'footer.copyright': '© 2025 Haluzator. Všechna práva vyhrazena.'
+            'footer.copyright': '© 2025 Haluzator. Všechna práva vyhrazena.',
+            'footer.facebook': 'Facebook',
+            'footer.email': 'Email'
         }
     };
 

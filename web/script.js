@@ -91,4 +91,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Interactive UI buttons image highlighting - REMOVED
+
+    // Email protection - decode email on page load (best practice for spam protection)
+    const emailLink = document.getElementById('footer-email');
+    if (emailLink) {
+        // Obfuscated email - decode at runtime
+        // Base64: cXdhbmFwQGdtYWlsLmNvbQ== decodes to: qwanap@gmail.com
+        const encodedEmail = 'cXdhbmFwQGdtYWlsLmNvbQ==';
+        const email = atob(encodedEmail);
+
+        // Set href and text content
+        emailLink.href = 'mailto:' + email;
+        emailLink.textContent = email;
+
+        // Also set title for accessibility
+        emailLink.title = 'Send email to ' + email;
+    }
 });
