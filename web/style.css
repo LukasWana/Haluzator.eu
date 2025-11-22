@@ -1718,6 +1718,22 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Remove max-height restrictions on mobile for content elements */
+    section,
+    .feature-card,
+    .feature-card-content,
+    .feature-card-image,
+    .card,
+    .card-content,
+    .buttons-description,
+    .button-item,
+    .tuning-controls-columns,
+    .feature-cards-grid,
+    .carousel-wrapper,
+    .carousel-slide {
+        max-height: none !important;
+    }
+
     /* Ensure sections are visible on mobile */
     section {
         display: block !important;
