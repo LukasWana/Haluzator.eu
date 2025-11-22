@@ -1,7 +1,7 @@
 /* Base Styles - Aligned with Haluzator App Design */
 :root {
     --bg-color: #0a0a0a; /* App background */
-    --surface-color: #1a1a1a; /* App surface/panels */
+    --surface-color: #000000; /* App surface/panels */
     --text-color: #ffffff;
     --accent-primary: #2681ff; /* Haluzator Blue - Active Color */
     --accent-primary-glow: rgba(38, 129, 255, 0.5); /* Active glow */
@@ -13,7 +13,11 @@
     --font-heading: 'Calistoga', serif; /* Only for main brand heading */
     --font-heading-alt: 'IBM Plex Sans', sans-serif; /* For section headings */
     --card-bg: #1a1a1a; /* Surface color */
-    --transition-speed: 0.3s;
+    --transition-speed: 0.6s;
+    /* --heading-text-shadow: 0 0 450px rgba(0, 0, 0, 1); */ /* Black shadow for headings - DOČASNĚ ZAKOMENTOVÁNO */
+    /* --heading-drop-shadow: drop-shadow(0 0 450px rgba(0, 0, 0, 1)); */ /* Black drop-shadow for liquid headings - DOČASNĚ ZAKOMENTOVÁNO */
+    --heading-text-shadow: none; /* DOČASNĚ VYPNUTO */
+    --heading-drop-shadow: none; /* DOČASNĚ VYPNUTO */
 }
 
 /* Icon Styles */
@@ -64,18 +68,26 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
     font-family: var(--font-heading); /* Calistoga only for main brand heading */
     font-weight: 400;
     text-transform: none;
+    position: relative;
+    z-index: 2;
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 h2, h3, h4, h5, h6 {
     font-family: var(--font-heading-alt); /* IBM Plex Sans for section headings */
     font-weight: 600;
     text-transform: none;
+    position: relative;
+    z-index: 2;
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 /* Liquid efekt pro H2 a H3 s Calistoga fontem */
@@ -99,7 +111,8 @@ h3.liquid,
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: liquid-flow 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px var(--accent-primary-glow));
+    /* filter: drop-shadow(0 0 20px var(--accent-primary-glow)) var(--heading-drop-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
+    filter: drop-shadow(0 0 20px var(--accent-primary-glow)); /* Pouze modrý glow, bez černého shadow */
 }
 
 /* Specifické úpravy pro section-title s liquid efektem */
@@ -120,16 +133,25 @@ a {
     text-decoration: none;
     color: inherit;
     transition: color var(--transition-speed);
+    position: relative;
+    z-index: 2;
 }
 
 ul {
     list-style: none;
 }
 
+p {
+    position: relative;
+    z-index: 2;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Background Canvas Animation - CodePen Effect */
@@ -142,66 +164,11 @@ ul {
     z-index: -1;
     pointer-events: none;
     /* Remove background gradient - CodePen effect will handle it */
+    opacity: 0.9; /* Přidat tuto řádku - hodnota 0.0 až 1.0 */
     background: #000000;
 }
 
-@keyframes bg-color-shift {
-    0% {
-        background: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #000000 100%);
-    }
-    12.5% {
-        background: radial-gradient(circle at 50% 50%, #151a2e 0%, #000000 100%);
-    }
-    25% {
-        background: radial-gradient(circle at 50% 50%, #0b1a2e 0%, #000000 100%);
-    }
-    37.5% {
-        background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #000000 100%);
-    }
-    50% {
-        background: radial-gradient(circle at 50% 50%, #2e0b1a 0%, #000000 100%);
-    }
-    62.5% {
-        background: radial-gradient(circle at 50% 50%, #2e151a 0%, #000000 100%);
-    }
-    75% {
-        background: radial-gradient(circle at 50% 50%, #1a2e0b 0%, #000000 100%);
-    }
-    87.5% {
-        background: radial-gradient(circle at 50% 50%, #1a2e15 0%, #000000 100%);
-    }
-    100% {
-        background: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #000000 100%);
-    }
-}
-
-@keyframes bg-pulse {
-    0%, 100% {
-        opacity: 0.5;
-        transform: scale(1);
-    }
-    25% {
-        opacity: 0.7;
-        transform: scale(1.03);
-    }
-    50% {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
-    75% {
-        opacity: 0.7;
-        transform: scale(1.03);
-    }
-}
-
-@keyframes bg-scanline {
-    0% {
-        background-position: 0 0, 0 0;
-    }
-    100% {
-        background-position: 0 100px, 100px 0;
-    }
-}
+/* CRT GIF Overlay removed */
 
 /* Navbar */
 .navbar {
@@ -276,6 +243,8 @@ ul {
     border: none;
     cursor: pointer;
     font-family: var(--font-main);
+    position: relative;
+    z-index: 3;
 }
 
 .btn-small {
@@ -328,6 +297,7 @@ ul {
     padding-top: 80px;
     padding-bottom: 40px;
     position: relative;
+    z-index: 2;
 }
 
 .hero .showcase-placeholder {
@@ -343,394 +313,11 @@ ul {
     margin-top: 40px;
     line-height: 1.1;
     position: relative;
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
-.glitch {
-    position: relative;
-    color: white;
-}
 
-.glitch::before,
-.glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.glitch::before {
-    left: 2px;
-    text-shadow: -10px 0 var(--accent-primary);
-    clip: rect(24px, 550px, 90px, 0);
-    animation: glitch-anim-2 3s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-    left: -2px;
-    text-shadow: -1px 0 var(--accent-primary);
-    clip: rect(85px, 550px, 140px, 0);
-    animation: glitch-anim 2.5s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-anim {
-    0% { clip: rect(14px, 9999px, 127px, 0); }
-    20% { clip: rect(85px, 9999px, 66px, 0); }
-    40% { clip: rect(24px, 9999px, 9px, 0); }
-    60% { clip: rect(102px, 9999px, 14px, 0); }
-    80% { clip: rect(46px, 9999px, 29px, 0); }
-    100% { clip: rect(117px, 9999px, 131px, 0); }
-}
-
-@keyframes glitch-anim-2 {
-    0% { clip: rect(129px, 9999px, 36px, 0); }
-    20% { clip: rect(36px, 9999px, 4px, 0); }
-    40% { clip: rect(14px, 9999px, 123px, 0); }
-    60% { clip: rect(67px, 9999px, 100px, 0); }
-    80% { clip: rect(148px, 9999px, 59px, 0); }
-    100% { clip: rect(53px, 9999px, 92px, 0); }
-}
-
-/* ============================================
-   ALTERNATIVNÍ EFEKTY PRO H1
-   Změňte třídu na H1 pro vyzkoušení
-   ============================================ */
-
-/* 1. NEON GLOW - Pulzující neonový efekt */
-.hero h1.neon-glow {
-    color: var(--accent-primary);
-    text-shadow:
-        0 0 10px var(--accent-primary),
-        0 0 20px var(--accent-primary),
-        0 0 30px var(--accent-primary),
-        0 0 40px var(--accent-primary-glow);
-    animation: neon-pulse 2s ease-in-out infinite alternate;
-}
-
-@keyframes neon-pulse {
-    from {
-        text-shadow:
-            0 0 10px var(--accent-primary),
-            0 0 20px var(--accent-primary),
-            0 0 30px var(--accent-primary),
-            0 0 40px var(--accent-primary-glow);
-    }
-    to {
-        text-shadow:
-            0 0 20px var(--accent-primary),
-            0 0 30px var(--accent-primary),
-            0 0 40px var(--accent-primary),
-            0 0 50px var(--accent-primary-glow),
-            0 0 60px var(--accent-primary-glow);
-    }
-}
-
-/* 2. GRADIENT ANIMATION - Animovaný gradient */
-.hero h1.gradient-anim {
-    background: linear-gradient(
-        90deg,
-        var(--accent-primary) 0%,
-        var(--accent-secondary) 25%,
-        var(--accent-tertiary) 50%,
-        var(--accent-secondary) 75%,
-        var(--accent-primary) 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 3s linear infinite;
-}
-
-@keyframes gradient-shift {
-    to {
-        background-position: 200% center;
-    }
-}
-
-/* 3. WAVE EFFECT - Vlnový efekt */
-.hero h1.wave-effect {
-    position: relative;
-    background: linear-gradient(
-        90deg,
-        var(--accent-primary) 0%,
-        var(--accent-secondary) 50%,
-        var(--accent-primary) 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: wave 3s ease-in-out infinite;
-}
-
-@keyframes wave {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-/* 4. SHIMMER - Lesklý efekt */
-.hero h1.shimmer {
-    position: relative;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.3) 50%,
-        rgba(255, 255, 255, 0.1) 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 3s linear infinite;
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}
-
-/* 5. 3D TEXT - Třírozměrný efekt se stínem */
-.hero h1.text-3d {
-    color: var(--accent-primary);
-    text-shadow:
-        1px 1px 0 var(--accent-primary-glow),
-        2px 2px 0 var(--accent-primary-glow),
-        3px 3px 0 var(--accent-primary-glow),
-        4px 4px 0 var(--accent-primary-glow),
-        5px 5px 0 var(--accent-primary-glow),
-        6px 6px 10px rgba(0, 0, 0, 0.5),
-        7px 7px 20px rgba(0, 0, 0, 0.3);
-    transform: perspective(500px) rotateX(5deg);
-    animation: float-3d 3s ease-in-out infinite;
-}
-
-@keyframes float-3d {
-    0%, 100% {
-        transform: perspective(500px) rotateX(5deg) translateY(0);
-    }
-    50% {
-        transform: perspective(500px) rotateX(5deg) translateY(-10px);
-    }
-}
-
-/* 6. PARTICLE GLOW - Částicový efekt */
-.hero h1.particle-glow {
-    position: relative;
-    color: var(--accent-primary);
-    text-shadow:
-        0 0 5px var(--accent-primary),
-        0 0 10px var(--accent-primary),
-        0 0 15px var(--accent-primary);
-    animation: particle-flicker 2s ease-in-out infinite;
-}
-
-.hero h1.particle-glow::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--accent-secondary);
-    text-shadow:
-        0 0 5px var(--accent-secondary),
-        0 0 10px var(--accent-secondary);
-    opacity: 0.5;
-    animation: particle-flicker-2 1.5s ease-in-out infinite;
-    z-index: -1;
-}
-
-@keyframes particle-flicker {
-    0%, 100% {
-        opacity: 1;
-        filter: brightness(1);
-    }
-    50% {
-        opacity: 0.8;
-        filter: brightness(1.2);
-    }
-}
-
-@keyframes particle-flicker-2 {
-    0%, 100% {
-        opacity: 0.3;
-        transform: translate(0, 0);
-    }
-    50% {
-        opacity: 0.6;
-        transform: translate(2px, -2px);
-    }
-}
-
-/* 7. SMOOTH GLOW - Jemný pulzující efekt */
-.hero h1.smooth-glow {
-    color: #ffffff;
-    text-shadow:
-        0 0 20px var(--accent-primary-glow),
-        0 0 40px var(--accent-primary-glow),
-        0 0 60px var(--accent-primary-glow);
-    animation: smooth-pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes smooth-pulse {
-    0%, 100% {
-        text-shadow:
-            0 0 20px var(--accent-primary-glow),
-            0 0 40px var(--accent-primary-glow),
-            0 0 60px var(--accent-primary-glow);
-        transform: scale(1);
-    }
-    50% {
-        text-shadow:
-            0 0 30px var(--accent-primary-glow),
-            0 0 60px var(--accent-primary-glow),
-            0 0 90px var(--accent-primary-glow);
-        transform: scale(1.02);
-    }
-}
-
-/* 8. MULTI-COLOR GLOW - Vícebarevný efekt */
-.hero h1.multi-color {
-    position: relative;
-    color: #ffffff;
-    text-shadow:
-        0 0 10px var(--accent-primary),
-        0 0 20px var(--accent-primary),
-        0 0 30px var(--accent-primary);
-    animation: multi-color-shift 4s ease-in-out infinite;
-}
-
-@keyframes multi-color-shift {
-    0% {
-        text-shadow:
-            0 0 10px var(--accent-primary),
-            0 0 20px var(--accent-primary),
-            0 0 30px var(--accent-primary);
-    }
-    33% {
-        text-shadow:
-            0 0 10px var(--accent-secondary),
-            0 0 20px var(--accent-secondary),
-            0 0 30px var(--accent-secondary);
-    }
-    66% {
-        text-shadow:
-            0 0 10px var(--accent-tertiary),
-            0 0 20px var(--accent-tertiary),
-            0 0 30px var(--accent-tertiary);
-    }
-    100% {
-        text-shadow:
-            0 0 10px var(--accent-primary),
-            0 0 20px var(--accent-primary),
-            0 0 30px var(--accent-primary);
-    }
-}
-
-/* 9. AUDIO REACTIVE - Simulace reakce na hudbu (pulzování) */
-.hero h1.audio-reactive {
-    color: var(--accent-primary);
-    text-shadow:
-        0 0 10px var(--accent-primary),
-        0 0 20px var(--accent-primary),
-        0 0 30px var(--accent-primary-glow);
-    animation: audio-beat 0.6s ease-in-out infinite;
-    transform-origin: center;
-}
-
-@keyframes audio-beat {
-    0%, 100% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-    25% {
-        transform: scale(1.05);
-        filter: brightness(1.3);
-    }
-    50% {
-        transform: scale(0.98);
-        filter: brightness(0.9);
-    }
-    75% {
-        transform: scale(1.03);
-        filter: brightness(1.2);
-    }
-}
-
-/* 10. CHROMATIC ABERRATION - RGB rozklad (retro VJ styl) */
-.hero h1.chromatic {
-    position: relative;
-    color: #ffffff;
-    text-shadow:
-        2px 0 0 var(--accent-primary),
-        -2px 0 0 var(--accent-secondary),
-        0 2px 0 var(--accent-tertiary);
-    animation: chromatic-shift 3s ease-in-out infinite;
-}
-
-@keyframes chromatic-shift {
-    0%, 100% {
-        text-shadow:
-            2px 0 0 var(--accent-primary),
-            -2px 0 0 var(--accent-secondary),
-            0 2px 0 var(--accent-tertiary);
-    }
-    50% {
-        text-shadow:
-            -2px 0 0 var(--accent-primary),
-            2px 0 0 var(--accent-secondary),
-            0 -2px 0 var(--accent-tertiary);
-    }
-}
-
-/* 11. HOLOGRAM - Holografický efekt */
-.hero h1.hologram {
-    position: relative;
-    color: var(--accent-secondary);
-    text-shadow:
-        0 0 5px var(--accent-secondary),
-        0 0 10px var(--accent-secondary),
-        0 0 15px var(--accent-secondary),
-        0 0 20px var(--accent-secondary);
-    background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(0, 240, 255, 0.3) 50%,
-        transparent 100%
-    );
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: hologram-scan 2s linear infinite;
-    filter: drop-shadow(0 0 10px var(--accent-secondary-glow));
-}
-
-@keyframes hologram-scan {
-    0% {
-        background-position: -200% 0;
-        opacity: 0.8;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        background-position: 200% 0;
-        opacity: 0.8;
-    }
-}
-
-/* 12. LIQUID MORPH - Tekutý/morfující efekt */
+/* LIQUID MORPH - Tekutý/morfující efekt (používán v HTML) */
 .hero h1.liquid {
     position: relative;
     color: var(--accent-primary);
@@ -747,7 +334,8 @@ ul {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: liquid-flow 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px var(--accent-primary-glow));
+    /* filter: drop-shadow(0 0 20px var(--accent-primary-glow)) var(--heading-drop-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
+    filter: drop-shadow(0 0 20px var(--accent-primary-glow)); /* Pouze modrý glow, bez černého shadow */
 }
 
 @keyframes liquid-flow {
@@ -761,247 +349,6 @@ ul {
     }
 }
 
-/* 13. SCANLINE - Retro CRT efekt */
-.hero h1.scanline {
-    position: relative;
-    color: var(--accent-primary);
-    text-shadow:
-        0 0 10px var(--accent-primary),
-        0 0 20px var(--accent-primary-glow);
-    background-image:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(38, 129, 255, 0.1) 2px,
-            rgba(38, 129, 255, 0.1) 4px
-        );
-    animation: scanline-move 0.1s linear infinite;
-}
-
-@keyframes scanline-move {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 10px;
-    }
-}
-
-/* 14. PARTICLE TRAIL - Částicová stopa */
-.hero h1.particle-trail {
-    position: relative;
-    color: #ffffff;
-    text-shadow:
-        0 0 10px var(--accent-primary),
-        0 0 20px var(--accent-primary),
-        0 0 30px var(--accent-primary-glow);
-}
-
-.hero h1.particle-trail::before,
-.hero h1.particle-trail::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--accent-primary);
-    opacity: 0.3;
-    z-index: -1;
-}
-
-.hero h1.particle-trail::before {
-    animation: trail-1 2s ease-in-out infinite;
-    text-shadow: 0 0 5px var(--accent-primary);
-}
-
-.hero h1.particle-trail::after {
-    animation: trail-2 2s ease-in-out infinite 0.5s;
-    text-shadow: 0 0 5px var(--accent-secondary);
-}
-
-@keyframes trail-1 {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.3;
-    }
-    50% {
-        transform: translate(5px, -5px) scale(1.05);
-        opacity: 0.1;
-    }
-}
-
-@keyframes trail-2 {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.2;
-    }
-    50% {
-        transform: translate(-5px, 5px) scale(1.05);
-        opacity: 0.05;
-    }
-}
-
-/* 15. KINETIC TYPOGRAPHY - Dynamický pohyb písmen */
-.hero h1.kinetic {
-    color: var(--accent-primary);
-    text-shadow:
-        0 0 10px var(--accent-primary),
-        0 0 20px var(--accent-primary-glow);
-    animation: kinetic-bounce 3s ease-in-out infinite;
-    transform-origin: center;
-}
-
-@keyframes kinetic-bounce {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    25% {
-        transform: translateY(-5px) rotate(1deg);
-    }
-    50% {
-        transform: translateY(0) rotate(0deg);
-    }
-    75% {
-        transform: translateY(5px) rotate(-1deg);
-    }
-}
-
-/* 16. MATRIX RAIN - Matrix-style efekt (diskrétní) */
-.hero h1.matrix {
-    position: relative;
-    color: var(--accent-secondary);
-    text-shadow:
-        0 0 5px var(--accent-secondary),
-        0 0 10px var(--accent-secondary),
-        0 0 15px var(--accent-secondary-glow);
-    background:
-        linear-gradient(
-            to bottom,
-            transparent 0%,
-            rgba(0, 240, 255, 0.1) 50%,
-            transparent 100%
-        );
-    background-size: 100% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: matrix-fall 2s linear infinite;
-}
-
-@keyframes matrix-fall {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 100%;
-    }
-}
-
-/* 17. ENERGY PULSE - Energetický pulz */
-.hero h1.energy-pulse {
-    color: var(--accent-primary);
-    text-shadow:
-        0 0 5px var(--accent-primary),
-        0 0 10px var(--accent-primary),
-        0 0 15px var(--accent-primary),
-        0 0 20px var(--accent-primary-glow),
-        0 0 30px var(--accent-primary-glow);
-    animation: energy-pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes energy-pulse {
-    0%, 100% {
-        text-shadow:
-            0 0 5px var(--accent-primary),
-            0 0 10px var(--accent-primary),
-            0 0 15px var(--accent-primary),
-            0 0 20px var(--accent-primary-glow),
-            0 0 30px var(--accent-primary-glow);
-        transform: scale(1);
-    }
-    50% {
-        text-shadow:
-            0 0 10px var(--accent-primary),
-            0 0 20px var(--accent-primary),
-            0 0 30px var(--accent-primary),
-            0 0 40px var(--accent-primary-glow),
-            0 0 50px var(--accent-primary-glow);
-        transform: scale(1.03);
-    }
-}
-
-/* 18. GLITCH 2.0 - Vylepšený glitch efekt */
-.hero h1.glitch-v2 {
-    position: relative;
-    color: #ffffff;
-    text-shadow:
-        2px 2px 0 var(--accent-primary),
-        -2px -2px 0 var(--accent-secondary);
-    animation: glitch-v2 0.3s infinite;
-}
-
-.hero h1.glitch-v2::before,
-.hero h1.glitch-v2::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.hero h1.glitch-v2::before {
-    left: 2px;
-    text-shadow: -2px 0 var(--accent-primary);
-    clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-v2-anim 3s infinite linear alternate-reverse;
-}
-
-.hero h1.glitch-v2::after {
-    left: -2px;
-    text-shadow: 2px 0 var(--accent-secondary);
-    clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-v2-anim-2 2s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-v2 {
-    0%, 90%, 100% {
-        transform: translate(0);
-    }
-    92% {
-        transform: translate(-2px, 2px);
-    }
-    94% {
-        transform: translate(2px, -2px);
-    }
-    96% {
-        transform: translate(-2px, -2px);
-    }
-    98% {
-        transform: translate(2px, 2px);
-    }
-}
-
-@keyframes glitch-v2-anim {
-    0% { clip: rect(10px, 9999px, 30px, 0); }
-    20% { clip: rect(50px, 9999px, 20px, 0); }
-    40% { clip: rect(30px, 9999px, 60px, 0); }
-    60% { clip: rect(15px, 9999px, 45px, 0); }
-    80% { clip: rect(40px, 9999px, 10px, 0); }
-    100% { clip: rect(25px, 9999px, 55px, 0); }
-}
-
-@keyframes glitch-v2-anim-2 {
-    0% { clip: rect(60px, 9999px, 15px, 0); }
-    20% { clip: rect(25px, 9999px, 50px, 0); }
-    40% { clip: rect(45px, 9999px, 5px, 0); }
-    60% { clip: rect(20px, 9999px, 40px, 0); }
-    80% { clip: rect(55px, 9999px, 30px, 0); }
-    100% { clip: rect(35px, 9999px, 25px, 0); }
-}
-
 .hero-subtitle {
     font-size: 1.5rem;
     color: #ccc;
@@ -1013,11 +360,15 @@ ul {
     display: flex;
     gap: 20px;
     justify-content: center;
+    position: relative;
+    z-index: 2;
 }
 
 /* Sections General */
 section {
     padding: 100px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -1029,6 +380,7 @@ section {
     color: var(--accent-primary);
     text-transform: none;
     letter-spacing: 1px;
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 .section-subtitle {
@@ -1042,6 +394,8 @@ section {
 /* Intro */
 .intro {
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .intro .showcase-placeholder {
@@ -1077,9 +431,8 @@ section {
     border-radius: 0; /* Sharp corners like app */
     border: none;
     transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+    z-index: 2;
 }
-
-/* Hover effect disabled */
 
 .card-graphics {
     display: flex;
@@ -1106,8 +459,6 @@ section {
     height: 60px;
     max-width: 100%;
 }
-
-/* Hover effects disabled */
 
 @keyframes graphic-pulse {
     0%, 100% {
@@ -1147,14 +498,13 @@ section {
     max-width: 200px;
 }
 
-/* Hover effect disabled */
-
 .card h3 {
     font-family: var(--font-heading-alt);
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--accent-primary);
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 /* Users section - center card content */
@@ -1178,7 +528,7 @@ section {
     background-clip: unset;
     animation: none;
     filter: none;
-    text-shadow: none;
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
     text-align: center;
 }
 
@@ -1216,6 +566,7 @@ section {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
+    z-index: 2;
 }
 
 .carousel-wrapper {
@@ -1292,7 +643,7 @@ section {
 .showcase-placeholder {
     width: 100%;
     min-height: 500px;
-    background: #000;
+    background: var(--surface-color);
     border: none;
     display: flex;
     align-items: center;
@@ -1300,6 +651,7 @@ section {
     position: relative;
     border-radius: 0; /* Sharp corners */
     padding: 20px;
+    z-index: 2;
 }
 
 .screenshot-img {
@@ -1343,9 +695,8 @@ section {
     transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
-
-/* Hover effect disabled */
 
 /* Fullwidth layout for Tuning Controls and Sequencer */
 .feature-card-fullwidth {
@@ -1464,7 +815,8 @@ section {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: liquid-flow 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px var(--accent-primary-glow));
+    /* filter: drop-shadow(0 0 20px var(--accent-primary-glow)) var(--heading-drop-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
+    filter: drop-shadow(0 0 20px var(--accent-primary-glow)); /* Pouze modrý glow, bez černého shadow */
     border-bottom: none;
     padding-bottom: 10px;
 }
@@ -1477,6 +829,7 @@ section {
     color: var(--accent-primary);
     border-bottom: 2px solid var(--accent-primary);
     padding-bottom: 10px;
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 .feature-intro {
@@ -1543,9 +896,8 @@ section {
     border-bottom: none;
     border-radius: 0; /* Sharp corners */
     transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, border-left-width 0.4s ease;
+    z-index: 2;
 }
-
-/* Hover effect disabled */
 
 .button-item.highlighted {
     transform: translateY(-5px) scale(1.02);
@@ -1557,7 +909,8 @@ section {
 
 .button-item.highlighted h4 {
     color: var(--accent-primary);
-    text-shadow: 0 0 8px var(--accent-primary-glow);
+    /* text-shadow: var(--heading-text-shadow), 0 0 8px var(--accent-primary-glow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
+    text-shadow: 0 0 8px var(--accent-primary-glow); /* Pouze modrý glow, bez černého shadow */
 }
 
 .button-item.highlighted p {
@@ -1579,6 +932,7 @@ section {
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--accent-primary);
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 .button-item p {
@@ -1610,6 +964,7 @@ section {
     font-weight: 600;
     margin-bottom: 10px;
     color: #fff;
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 /* Performance */
@@ -1624,6 +979,7 @@ section {
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--accent-primary);
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 /* How it works */
@@ -1654,6 +1010,7 @@ section {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 10px;
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 /* Users */
@@ -1688,6 +1045,7 @@ section {
     display: inline-block;
     margin-top: 30px;
     box-shadow: 0 0 12px var(--accent-primary-glow);
+    z-index: 2;
 }
 
 .download-box h3 {
@@ -1696,6 +1054,7 @@ section {
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--accent-primary);
+    /* text-shadow: var(--heading-text-shadow); */ /* DOČASNĚ ZAKOMENTOVÁNO */
 }
 
 .download-box p {
@@ -1714,6 +1073,8 @@ footer {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: #666;
+    position: relative;
+    z-index: 2;
 }
 
 /* Responsive */
@@ -2014,12 +1375,7 @@ footer {
     -moz-filter: blur(40px);
     -ms-filter: blur(40px);
     filter: blur(40px);
-    background: linear-gradient(
-        270deg,
-        var(--accent-primary) 0%,
-        var(--accent-secondary) 50%,
-        var(--accent-tertiary) 100%
-    );
+
     background-size: 200% 200%;
     animation: animateGlow 10s ease infinite;
     opacity: 0.4;
@@ -2033,32 +1389,7 @@ footer {
 }
 
 /* Enable backlight effect for showcase placeholder (intro image) */
-.showcase-placeholder::before {
-    position: absolute;
-    content: "";
-    top: -40px;
-    left: -40px;
-    width: calc(100% + 80px);
-    height: calc(100% + 80px);
-    z-index: -1;
-    transform: scale(1);
-    transform-origin: center center;
-    -webkit-filter: blur(40px);
-    -moz-filter: blur(40px);
-    -ms-filter: blur(40px);
-    filter: blur(40px);
-    background: linear-gradient(
-        270deg,
-        var(--accent-primary) 0%,
-        var(--accent-secondary) 50%,
-        var(--accent-tertiary) 100%
-    );
-    background-size: 200% 200%;
-    animation: animateGlow 10s ease infinite;
-    opacity: 0.4;
-    pointer-events: none;
-    border-radius: 0;
-}
+/* Backlight effect removed for showcase placeholder */
 
 /* Ensure screenshot image stays on top */
 .showcase-placeholder .screenshot-img {
