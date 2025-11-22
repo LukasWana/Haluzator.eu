@@ -192,13 +192,13 @@
             <p class="section-subtitle">Kompletní přehled všech tlačítek a funkcí v hlavním panelu aplikace. Každé tlačítko vám dává kontrolu nad vizuální show:</p>
 
             <div class="buttons-showcase">
-                <img src="img/Haluzator-buttons.png" alt="Haluzator ovládací tlačítka" class="buttons-image">
+                <img src="img/Haluzator-buttons.png" alt="Haluzator ovládací tlačítka" class="buttons-image" id="ui-buttons-image">
                 <div class="buttons-description">
-                    <div class="button-item">
+                    <div class="button-item" data-button="fps">
                         <h4>FPS</h4>
                         <p>Zobrazení aktuálního počtu snímků za sekundu. Sledujte výkon renderování v reálném čase a optimalizujte nastavení pro plynulou vizualizaci.</p>
                     </div>
-                    <div class="button-item">
+                    <div class="button-item" data-button="play">
                         <h4>
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z"/>
@@ -211,7 +211,7 @@
                         </h4>
                         <p>Spusťte nebo pozastavte přehrávání vizuálů. Klávesová zkratka: <strong>Mezerník</strong></p>
                     </div>
-                    <div class="button-item">
+                    <div class="button-item" data-button="microphone">
                         <h4>
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z"/>
@@ -220,16 +220,7 @@
                         </h4>
                         <p>Zapněte nebo vypněte audio vstup z mikrofonu pro audio-reaktivní efekty. Vizuály reagují na hudbu v reálném čase.</p>
                     </div>
-                    <div class="button-item">
-                        <h4>
-                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                                <text x="12" y="18" font-size="20" font-weight="bold" text-anchor="middle" fill="currentColor">?</text>
-                            </svg>
-                            Nápověda
-                        </h4>
-                        <p>Otevřete nápovědu s přehledem všech klávesových zkratek, funkcí a tipů pro efektivní použití.</p>
-                    </div>
-                    <div class="button-item">
+                    <div class="button-item" data-button="fullscreen">
                         <h4>
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
@@ -238,7 +229,7 @@
                         </h4>
                         <p>Přepněte do celoobrazovkového režimu pro perfektní VJ show bez rušivých prvků.</p>
                     </div>
-                    <div class="button-item">
+                    <div class="button-item" data-button="projection">
                         <h4>
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
@@ -247,7 +238,7 @@
                         </h4>
                         <p>Otevřete samostatné okno pro projektor, zatímco ovládáte z hlavního okna. Perfektní pro živé vystoupení.</p>
                     </div>
-                    <div class="button-item">
+                    <div class="button-item" data-button="save">
                         <h4>
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
@@ -256,7 +247,7 @@
                         </h4>
                         <p>Uložte celou vaši session včetně všech efektů, médií a nastavení do jednoho souboru. Všechna data zůstávají na vašem zařízení.</p>
                     </div>
-                    <div class="button-item">
+                    <div class="button-item" data-button="load">
                         <h4>
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20 6h-8l-2-2H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-1 8h-3v3h-2v-3h-3v-2h3V9h2v3h3v2z"/>
@@ -265,7 +256,7 @@
                         </h4>
                         <p>Načtěte dříve uloženou session. Obnovte všechny vaše efekty, sekvence a nastavení jedním kliknutím.</p>
                     </div>
-                    <div class="button-item">
+                    <div class="button-item" data-button="ui-toggle">
                         <h4>
                             <span class="ui-icons-group">
                                 <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" title="Controls">
@@ -282,7 +273,7 @@
                         </h4>
                         <p>Skryjte nebo zobrazte ovládací panely (Controls, Sequencer, Right Panel). Ideální pro čistý fullscreen režim nebo dual screen setup.</p>
                     </div>
-                    <div class="button-item">
+                    <div class="button-item" data-button="midi">
                         <h4>MIDI IN</h4>
                         <p>Výběr MIDI vstupního zařízení pro připojení MIDI kontroleru nebo kláves. Po připojení můžete mapovat MIDI signály na ovládací prvky aplikace.</p>
                     </div>
@@ -291,55 +282,56 @@
 
             <!-- Feature Cards Grid -->
             <div class="feature-cards-grid">
-                <!-- Tuning Controls Card -->
-                <div class="feature-card">
-                    <div class="feature-card-image">
-                        <img src="img/Haluzator-tunning.png" alt="Haluzator tuning controls" class="feature-image">
-                    </div>
-                    <div class="feature-card-content">
-                        <h3>
-                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61-.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
-                            </svg>
-                            Tuning Controls
-                        </h3>
-                        <p class="feature-intro">Kompletní sada ovládacích prvků pro jemné doladění vizuálů v reálném čase:</p>
-                        <ul>
-                            <li><strong>TEMPO:</strong> Nastavte rychlost přehrávání (6-120 BPM)</li>
-                            <li><strong>OVERLAY:</strong> Průhlednost HTML overlay vrstev</li>
-                            <li><strong>AUDIO:</strong> Síla audio-reaktivních efektů</li>
-                            <li><strong>Blur & Glow:</strong> Rozmazání a svítivé efekty</li>
-                            <li><strong>Chroma & Hue Shift:</strong> Barevné transformace</li>
-                            <li><strong>Mandala Segments:</strong> Symetrické efekty</li>
-                            <li><strong>Particles:</strong> Částicové systémy</li>
-                            <li><strong>Saturation, Speed, Zoom:</strong> Dynamické parametry</li>
-                            <li><strong>Levels:</strong> Shadows, Midtones, Highlights pro profesionální color grading</li>
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- Sequencer Card -->
-                <div class="feature-card">
+                <div class="feature-card feature-card-fullwidth">
                     <div class="feature-card-image">
                         <img src="img/Haluzator-sekvencer.png" alt="Haluzator sequencer" class="feature-image">
                     </div>
                     <div class="feature-card-content">
-                        <h3>
-                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3 3h18v4H3zm0 7h18v4H3zm0 7h18v4H3z"/>
-                            </svg>
-                            Sekvencer
-                        </h3>
+                        <h2 class="liquid">Sekvencer</h2>
                         <p class="feature-intro">Výkonný sekvencer pro vytváření komplexních vizuálních kompozic:</p>
-                        <ul>
-                            <li><strong>8 Stránek:</strong> Přepínejte mezi různými náladami a scénami celé show</li>
-                            <li><strong>Flexibilní kroky:</strong> Nastavte 2, 4, 8, nebo 16 kroků podle vašich potřeb</li>
-                            <li><strong>Drag & Drop:</strong> Jednoduše přetáhněte shadery, videa, 3D modely nebo HTML na jednotlivé kroky</li>
-                            <li><strong>Looping:</strong> Zacyklete libovolnou část sekvence pro opakující se efekty</li>
-                            <li><strong>Live VJ Mode:</strong> Aktivujte kroky v reálném čase pomocí klávesnice nebo MIDI</li>
-                            <li><strong>Kombinace médií:</strong> Každý krok může obsahovat shader, video, 3D model a HTML overlay současně</li>
-                            <li><strong>Plynulé přechody:</strong> Automatické fade efekty mezi kroky</li>
-                        </ul>
+                        <div class="tuning-controls-columns">
+                            <ul>
+                                <li><strong>8 Stránek:</strong> Přepínejte mezi různými náladami a scénami celé show</li>
+                                <li><strong>Flexibilní kroky:</strong> Nastavte 2, 4, 8, nebo 16 kroků podle vašich potřeb</li>
+                                <li><strong>Drag & Drop:</strong> Jednoduše přetáhněte shadery, videa, 3D modely nebo HTML na jednotlivé kroky</li>
+                                <li><strong>Looping:</strong> Zacyklete libovolnou část sekvence pro opakující se efekty</li>
+                            </ul>
+                            <ul>
+                                <li><strong>Live VJ Mode:</strong> Aktivujte kroky v reálném čase pomocí klávesnice nebo MIDI</li>
+                                <li><strong>Kombinace médií:</strong> Každý krok může obsahovat shader, video, 3D model a HTML overlay současně</li>
+                                <li><strong>Plynulé přechody:</strong> Automatické fade efekty mezi kroky</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuning Controls Card -->
+                <div class="feature-card feature-card-fullwidth">
+                    <div class="feature-card-content">
+                        <h2 class="liquid">Tuning Controls</h2>
+                        <p class="feature-intro">Kompletní sada ovládacích prvků pro jemné doladění vizuálů v reálném čase:</p>
+                    </div>
+                    <div class="feature-card-image">
+                        <img src="img/Haluzator-tunning.png" alt="Haluzator tuning controls" class="feature-image">
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="tuning-controls-columns">
+                            <ul>
+                                <li><strong>TEMPO:</strong> Nastavte rychlost přehrávání (6-120 BPM)</li>
+                                <li><strong>OVERLAY:</strong> Průhlednost HTML overlay vrstev</li>
+                                <li><strong>AUDIO:</strong> Síla audio-reaktivních efektů</li>
+                                <li><strong>Blur & Glow:</strong> Rozmazání a svítivé efekty</li>
+                                <li><strong>Chroma & Hue Shift:</strong> Barevné transformace</li>
+                            </ul>
+                            <ul>
+                                <li><strong>Mandala Segments:</strong> Symetrické efekty</li>
+                                <li><strong>Particles:</strong> Částicové systémy</li>
+                                <li><strong>Saturation:</strong> Intenzita barev a jejich sytost</li>
+                                <li><strong>Speed, Zoom:</strong> Dynamické parametry</li>
+                                <li><strong>Levels:</strong> Shadows, Midtones, Highlights pro profesionální color grading</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -349,24 +341,7 @@
                         <img src="img/Haluzator-shaders.png" alt="Haluzator shader library" class="feature-image">
                     </div>
                     <div class="feature-card-content">
-                        <h3>
-                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1" fill="none"/>
-                                <!-- Fraktální spirálový vzor -->
-                                <path d="M12 12 L12 2 A10 10 0 0 1 22 12 Z" fill="currentColor" opacity="0.3"/>
-                                <path d="M12 12 L22 12 A10 10 0 0 1 12 22 Z" fill="currentColor" opacity="0.4"/>
-                                <path d="M12 12 L12 22 A10 10 0 0 1 2 12 Z" fill="currentColor" opacity="0.3"/>
-                                <path d="M12 12 L2 12 A10 10 0 0 1 12 2 Z" fill="currentColor" opacity="0.4"/>
-                                <!-- Vnitřní fraktální struktura -->
-                                <path d="M12 12 L12 7 A5 5 0 0 1 17 12 Z" fill="currentColor" opacity="0.5"/>
-                                <path d="M12 12 L17 12 A5 5 0 0 1 12 17 Z" fill="currentColor" opacity="0.5"/>
-                                <path d="M12 12 L12 17 A5 5 0 0 1 7 12 Z" fill="currentColor" opacity="0.5"/>
-                                <path d="M12 12 L7 12 A5 5 0 0 1 12 7 Z" fill="currentColor" opacity="0.5"/>
-                                <!-- Střed -->
-                                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-                            </svg>
-                            Knihovna Shaderů
-                        </h3>
+                        <h2 class="liquid">Knihovna Shaderů</h2>
                         <p class="feature-intro">Rozsáhlá kolekce profesionálních vizuálních efektů:</p>
                         <ul>
                             <li><strong>150+ předpřipravených shaderů:</strong> Od abstraktních fraktálů přes částicové bouře až po retro glitch art</li>
@@ -383,21 +358,7 @@
                 <!-- Media Library Card -->
                 <div class="feature-card feature-card-horizontal">
                     <div class="feature-card-content">
-                        <h3>
-                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
-                                <!-- Uživatelský avatar -->
-                                <circle cx="10" cy="7" r="2.5" fill="currentColor" opacity="0.9"/>
-                                <path d="M5 19c0-2.76 2.24-5 5-5s5 2.24 5 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                                <!-- Uživatelské médium (fotka/video) -->
-                                <rect x="14" y="10" width="5" height="4" rx="0.5" fill="currentColor" opacity="0.7" stroke="currentColor" stroke-width="1"/>
-                                <circle cx="16" cy="11.5" r="0.6" fill="currentColor" opacity="0.5"/>
-                                <path d="M14.5 13.5l1.5-1 1.5 1v1.5h-3v-1.5z" fill="currentColor" opacity="0.5"/>
-                                <!-- Plus ikona pro přidání -->
-                                <circle cx="18.5" cy="8.5" r="2" fill="currentColor" opacity="0.9"/>
-                                <path d="M18.5 7.5v2M17.5 8.5h2" stroke="#0a0a0a" stroke-width="1.2" stroke-linecap="round"/>
-                            </svg>
-                            Knihovna Médií
-                        </h3>
+                        <h2 class="liquid">Knihovna Médií</h2>
                         <p class="feature-intro">Nahrajte své vlastní fotky a videa - to je hlavní účel aplikace:</p>
                         <ul>
                             <li><strong>Vaše fotky:</strong> Nahrajte fotky z dovolené, oslav nebo jakékoliv jiné momenty. Podpora všech běžných formátů (JPG, PNG, GIF, WebP).</li>
@@ -479,11 +440,102 @@
     <section class="users">
         <div class="container">
             <h2 class="section-title liquid">Pro koho je haluzator?</h2>
-            <ul class="user-list">
-                <li><strong>Každý, kdo má fotky a videa:</strong> Promítněte své vzpomínky s úžasnými efekty.</li>
-                <li><strong>Domácí uživatelé:</strong> Vytvořte úžasnou atmosféru na domácích oslavách.</li>
-                <li><strong>Kreativci:</strong> Experimentujte s grafikou bez hranic - zdarma a jednoduše.</li>
-            </ul>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <div class="card">
+                            <h3>Pro každého s fotkami a videi</h3>
+                            <p class="card-subtitle">Promítněte své vzpomínky s úžasnými efekty</p>
+                            <div class="card-image">
+                                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Rodina s fotoaparátem -->
+                                    <circle cx="100" cy="75" r="60" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="80" cy="60" r="8" fill="currentColor" opacity="0.6"/>
+                                    <path d="M70 75 Q80 70 90 75 Q80 80 70 75" fill="currentColor" opacity="0.4"/>
+                                    <circle cx="120" cy="60" r="8" fill="currentColor" opacity="0.6"/>
+                                    <path d="M110 75 Q120 70 130 75 Q120 80 110 75" fill="currentColor" opacity="0.4"/>
+                                    <!-- Fotoaparát -->
+                                    <rect x="85" y="90" width="30" height="20" rx="2" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                    <circle cx="100" cy="100" r="5" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="100" cy="100" r="3" fill="currentColor" opacity="0.2"/>
+                                    <!-- Vzpomínky jako fotky -->
+                                    <rect x="30" y="30" width="25" height="18" rx="1" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1"/>
+                                    <circle cx="42" cy="38" r="3" fill="currentColor" opacity="0.3"/>
+                                    <rect x="145" y="30" width="25" height="18" rx="1" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1"/>
+                                    <circle cx="157" cy="38" r="3" fill="currentColor" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <p class="card-story">
+                                Máte stovky fotek z dovolené, videa z oslav nebo rodinných setkání? Haluzator vám umožní proměnit tyto vzpomínky v úžasnou vizuální show. Nahrajte své fotky a videa, aplikujte profesionální efekty a promítejte je na zeď během rodinných večerů nebo oslav. Vytvořte si vlastní digitální galerii, která ožije díky dynamickým přechodům a audio-reaktivním efektům. Vaše vzpomínky tak získají nový rozměr a stanou se součástí nezapomenutelných momentů.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card">
+                            <h3>Pro domácí uživatele</h3>
+                            <p class="card-subtitle">Vytvořte úžasnou atmosféru na domácích oslavách</p>
+                            <div class="card-image">
+                                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Dům s osvětleným oknem -->
+                                    <rect x="60" y="50" width="80" height="70" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="70" y="60" width="25" height="20" fill="currentColor" opacity="0.3"/>
+                                    <rect x="105" y="60" width="25" height="20" fill="currentColor" opacity="0.3"/>
+                                    <path d="M60 50 L100 30 L140 50" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.15"/>
+                                    <!-- Projektor světlo -->
+                                    <path d="M100 30 L50 80 L50 100 L100 120 L150 100 L150 80 Z" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+                                    <!-- Lidé v domě -->
+                                    <circle cx="82" cy="75" r="4" fill="currentColor" opacity="0.5"/>
+                                    <path d="M78 82 Q82 80 86 82" fill="currentColor" opacity="0.4"/>
+                                    <circle cx="118" cy="75" r="4" fill="currentColor" opacity="0.5"/>
+                                    <path d="M114 82 Q118 80 122 82" fill="currentColor" opacity="0.4"/>
+                                    <!-- Atmosféra - částice -->
+                                    <circle cx="40" cy="40" r="2" fill="currentColor" opacity="0.3"/>
+                                    <circle cx="160" cy="45" r="2" fill="currentColor" opacity="0.3"/>
+                                    <circle cx="50" cy="110" r="2" fill="currentColor" opacity="0.3"/>
+                                    <circle cx="150" cy="105" r="2" fill="currentColor" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <p class="card-story">
+                                Chcete vytvořit nezapomenutelnou atmosféru na narozeninové oslavě, svatbě nebo jen tak při setkání s přáteli? Haluzator je ideálním řešením pro domácí promítání. Připojte projektor nebo použijte velkou televizi, nahrajte fotky hostů nebo tematické videa a nechte je pulzovat do rytmu hudby. S audio-reaktivními efekty se vaše show automaticky synchronizuje s hudbou, kterou hrajete. Vytvořte profesionální atmosféru bez nutnosti složitého nastavení – vše funguje jednoduše a intuitivně.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card">
+                            <h3>Pro kreativce a experimentátory</h3>
+                            <p class="card-subtitle">Experimentujte s grafikou bez hranic - zdarma a jednoduše</p>
+                            <div class="card-image">
+                                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Kreativní workspace -->
+                                    <rect x="40" y="40" width="120" height="80" rx="2" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="2"/>
+                                    <!-- Abstraktní tvary -->
+                                    <circle cx="70" cy="60" r="12" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M110 55 L125 70 L110 85 L95 70 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M140 65 Q155 55 160 70 Q155 85 140 75 Q145 70 140 65" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                    <!-- Vlnky a efekty -->
+                                    <path d="M50 100 Q60 95 70 100 T90 100" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <path d="M110 100 Q120 95 130 100 T150 100" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <!-- Barevné částice -->
+                                    <circle cx="60" cy="45" r="3" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="130" cy="50" r="3" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="150" cy="90" r="3" fill="currentColor" opacity="0.5"/>
+                                    <!-- Kreativní nástroje -->
+                                    <path d="M45 110 L55 105 M50 105 L50 115" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                                    <path d="M155 110 L145 105 M150 105 L150 115" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                                </svg>
+                            </div>
+                            <p class="card-story">
+                                Jste umělec, designér nebo prostě někdo, kdo miluje experimentování s grafikou? Haluzator vám otevírá nekonečné možnosti kreativního vyjádření. Vytvářejte vlastní shadery v GLSL, kombinujte efekty, experimentujte s 3D modely a HTML overlay vrstvami. S profesionálním Monaco editorem máte plnou kontrolu nad každým aspektem vizuálů. Všechno je zdarma, bez omezení a bez nutnosti složitého nastavení. Sdílejte své kreace s komunitou nebo je používejte pro vlastní projekty. Hranice existují jen ve vaší představivosti.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
         </div>
     </section>
 
