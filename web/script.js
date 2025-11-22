@@ -39,14 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Dynamic background effect (subtle mouse movement)
-    const bgAnimation = document.querySelector('.bg-animation');
-    document.addEventListener('mousemove', (e) => {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
-
-        bgAnimation.style.backgroundPosition = `${x * 20}px ${y * 20}px`;
-    });
+    // Background canvas animation is handled in bg-animation.js
 
     // Carousel with automatic animation
     const carouselWrapper = document.querySelector('.carousel-wrapper');
