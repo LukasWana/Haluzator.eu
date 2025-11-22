@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haluzator - Dirigent vašeho vizuálního vesmíru</title>
-    <meta name="description" content="Zdarma dostupná aplikace pro domácí promítání. Nahrajte své fotky a videa a vytvořte úžasnou vizuální show s profesionálními efekty.">
+    <title data-i18n="meta.title">Haluzator - Conductor of Your Visual Universe</title>
+    <meta name="description" content="" data-i18n="meta.description">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=Calistoga&display=swap" rel="stylesheet">
@@ -19,40 +19,45 @@
                 <img src="img/Haluzator-logo.svg" alt="Haluzator" class="logo-img">
             </a>
             <div class="nav-links">
-                <a href="https://github.com/LukasWana/Haluzator-stable/releases/download/release-1.0.0/Haluzator-0.0.0-portable.exe" target="_blank" rel="noopener noreferrer" class="btn btn-small">Stáhnout</a>
-                <a href="https://haluzator-shaders-images-videos-3d-html-759158123051.us-west1.run.app/" target="_blank" rel="noopener noreferrer" class="btn btn-small">Vyzkoušet</a>
+                <a href="https://github.com/LukasWana/Haluzator-stable/releases/download/release-1.0.0/Haluzator-0.0.0-portable.exe" target="_blank" rel="noopener noreferrer" class="btn btn-small" data-i18n="nav.download">Download</a>
+                <a href="https://haluzator-shaders-images-videos-3d-html-759158123051.us-west1.run.app/" target="_blank" rel="noopener noreferrer" class="btn btn-small" data-i18n="nav.try">Try it</a>
+                <div class="language-switcher">
+                    <button class="lang-btn" id="lang-switcher" aria-label="Switch language">
+                        <img src="img/001-united-kingdom.svg" alt="English" class="flag-icon" id="lang-flag">
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container hero-content">
-            <h1 class="liquid" data-text="Show efekty v rytmu vaší hudby">Show efekty v rytmu vaší hudby</h1>
+            <h1 class="liquid" data-i18n="hero.title" data-text="">Show effects in rhythm with your music</h1>
             <div class="showcase-placeholder">
                 <img src="img/Haluzator-screen.png" alt="Haluzator screenshot" class="screenshot-img">
             </div>
-            <p class="hero-subtitle">Jednoduchá aplikace pro domácí promítání. Nahrajte své fotky a videa, přidejte efekty a vytvořte úžasnou vizuální show. Zdarma pro Windows i web.</p>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Simple application for home projection. Upload your photos and videos, add effects and create amazing visual shows. Free for Windows and web.</p>
             <div class="cta-group">
-                <a href="https://github.com/LukasWana/Haluzator-stable/releases/download/release-1.0.0/Haluzator-0.0.0-portable.exe" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Stáhnout pro Windows</a>
-                <a href="https://haluzator-shaders-images-videos-3d-html-759158123051.us-west1.run.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Vyzkoušet v prohlížeči</a>
+                <a href="https://github.com/LukasWana/Haluzator-stable/releases/download/release-1.0.0/Haluzator-0.0.0-portable.exe" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="hero.download">Download for Windows</a>
+                <a href="https://haluzator-shaders-images-videos-3d-html-759158123051.us-west1.run.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="hero.try">Try in browser</a>
             </div>
-            <div class="test-mode-banner">Funkční prototyp v testovacím režimu</div>
+            <div class="test-mode-banner" data-i18n="hero.testmode">Functional prototype in test mode</div>
         </div>
     </header>
 
     <section class="intro">
         <div class="container">
-            <h2 class="section-title liquid">Co je to haluzator</h2>
+            <h2 class="section-title liquid" data-i18n="intro.title">What is Haluzator</h2>
 
-            <p class="intro-text">
-                Haluzator je <strong>zdarma dostupná aplikace pro každého</strong>, kdo chce promítat své vlastní fotky a videa s úžasnými efekty. Ideální pro <strong>domácí promítání, party nebo kreativní projekty</strong>. Nahrajte své médium, vyberte efekt a nechte grafiku pulzovat do rytmu hudby.
+            <p class="intro-text" data-i18n="intro.text">
+                Haluzator is a <strong>free application for everyone</strong> who wants to project their own photos and videos with amazing effects. Perfect for <strong>home projection, parties or creative projects</strong>. Upload your media, choose an effect and let the graphics pulse to the rhythm of music.
             </p>
         </div>
     </section>
 
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title liquid">Proč si ho zamilujete?</h2>
+            <h2 class="section-title liquid" data-i18n="features.title">Why you'll love it?</h2>
             <div class="grid-3">
                 <div class="card">
                     <div class="card-graphics">
@@ -81,12 +86,12 @@
                             </svg>
                         </div>
                     </div>
-                    <h3>Nahrajte své fotky a videa</h3>
-                    <p>Hlavní účel aplikace: <strong>promítat vaše vlastní obsahy</strong>. Nahrajte fotky z dovolené, videa z oslav nebo jakýkoliv jiný obsah a proměňte ho v úžasnou vizuální show.</p>
+                    <h3 data-i18n="features.upload.title">Upload your photos and videos</h3>
+                    <p data-i18n="features.upload.text">Main purpose of the application: <strong>project your own content</strong>. Upload vacation photos, celebration videos or any other content and transform it into an amazing visual show.</p>
                     <ul>
-                        <li>Podpora všech běžných formátů (JPG, PNG, MP4, WebM)</li>
-                        <li>Jednoduché nahrání přetažením souboru</li>
-                        <li>Okamžitý náhled: Vše vidíte v reálném čase</li>
+                        <li data-i18n="features.upload.item1">Support for all common formats (JPG, PNG, MP4, WebM)</li>
+                        <li data-i18n="features.upload.item2">Simple upload by dragging files</li>
+                        <li data-i18n="features.upload.item3">Instant preview: See everything in real time</li>
                     </ul>
                 </div>
                 <div class="card">
@@ -128,12 +133,12 @@
                             </svg>
                         </div>
                     </div>
-                    <h3>150+ vizuálních efektů</h3>
-                    <p>Přidejte profesionální efekty díky dynamickým shaderům – pokročilým GPU filtrům pro real-time transformaci obrazu. Kaleidoskopy, audio-reaktivní efekty a abstraktní vizuály, vše plynule a bez zpomalení.</p>
+                    <h3 data-i18n="features.effects.title">150+ visual effects</h3>
+                    <p data-i18n="features.effects.text">Add professional effects with dynamic shaders – advanced GPU filters for real-time image transformation. Kaleidoscopes, audio-reactive effects and abstract visuals, all smooth and without slowdown.</p>
                     <ul>
-                        <li><strong>Shadery:</strong> Více než 150 předpřipravených efektů pro každý vkus</li>
-                        <li><strong>3D Modely:</strong> Volitelně přidejte 3D objekty (.obj)</li>
-                        <li><strong>HTML Overlay:</strong> Přidejte texty nebo vlastní grafiku</li>
+                        <li data-i18n="features.effects.item1"><strong>Shaders:</strong> More than 150 pre-made effects for every taste</li>
+                        <li data-i18n="features.effects.item2"><strong>3D Models:</strong> Optionally add 3D objects (.obj)</li>
+                        <li data-i18n="features.effects.item3"><strong>HTML Overlay:</strong> Add texts or custom graphics</li>
                     </ul>
                 </div>
                 <div class="card">
@@ -173,12 +178,12 @@
                             </svg>
                         </div>
                     </div>
-                    <h3>Visual Show Mixer</h3>
-                    <p>Vytvářejte plynulé přechody mezi vašimi médii s crossfade efekty, vrstvením a různými blend režimy. Mixujte videa, fotky a shadery v reálném čase pro profesionální vizuální flow.</p>
+                    <h3 data-i18n="features.mixer.title">Visual Show Mixer</h3>
+                    <p data-i18n="features.mixer.text">Create smooth transitions between your media with crossfade effects, layering and various blend modes. Mix videos, photos and shaders in real time for professional visual flow.</p>
                     <ul>
-                        <li><strong>8 Stránek:</strong> Přepínejte mezi různými částmi vaší show</li>
-                        <li><strong>Rytmické kroky:</strong> Synchronizujte s hudbou</li>
-                        <li><strong>Looping:</strong> Zacyklete své oblíbené momenty</li>
+                        <li data-i18n="features.mixer.item1"><strong>8 Pages:</strong> Switch between different parts of your show</li>
+                        <li data-i18n="features.mixer.item2"><strong>Rhythmic steps:</strong> Synchronize with music</li>
+                        <li data-i18n="features.mixer.item3"><strong>Looping:</strong> Loop your favorite moments</li>
                     </ul>
                 </div>
             </div>
@@ -187,18 +192,18 @@
 
     <section id="controls" class="controls">
         <div class="container">
-            <h2 class="section-title liquid">Ovládací prvky a funkce</h2>
-            <p class="section-subtitle">Kompletní přehled všech tlačítek a funkcí v hlavním panelu aplikace. Každé tlačítko vám dává kontrolu nad vizuální show:</p>
+            <h2 class="section-title liquid" data-i18n="controls.title">Controls and features</h2>
+            <p class="section-subtitle" data-i18n="controls.subtitle">Complete overview of all buttons and functions in the main application panel. Each button gives you control over the visual show:</p>
 
             <div class="buttons-showcase">
                 <img src="img/Haluzator-buttons.png" alt="Haluzator ovládací tlačítka" class="buttons-image" id="ui-buttons-image">
                 <div class="buttons-description">
                     <div class="button-item" data-button="fps">
-                        <h4>FPS</h4>
-                        <p>Zobrazení aktuálního počtu snímků za sekundu. Sledujte výkon renderování v reálném čase a optimalizujte nastavení pro plynulou vizualizaci.</p>
+                        <h4 data-i18n="controls.fps">FPS</h4>
+                        <p data-i18n="controls.fps.desc">Display of current frames per second. Monitor rendering performance in real time and optimize settings for smooth visualization.</p>
                     </div>
                     <div class="button-item" data-button="play">
-                        <h4>
+                        <h4 data-i18n="controls.play">
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 5v14l11-7z"/>
                             </svg>
@@ -208,55 +213,55 @@
                             </svg>
                             Pause
                         </h4>
-                        <p>Spusťte nebo pozastavte přehrávání vizuálů. Klávesová zkratka: <strong>Mezerník</strong></p>
+                        <p data-i18n="controls.play.desc">Start or pause visual playback. Keyboard shortcut: <strong>Spacebar</strong></p>
                     </div>
                     <div class="button-item" data-button="microphone">
-                        <h4>
+                        <h4 data-i18n="controls.microphone">
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z"/>
                             </svg>
-                            Mikrofon
+                            Microphone
                         </h4>
-                        <p>Zapněte nebo vypněte audio vstup z mikrofonu pro audio-reaktivní efekty. Vizuály reagují na hudbu v reálném čase.</p>
+                        <p data-i18n="controls.microphone.desc">Turn audio input from microphone on or off for audio-reactive effects. Visuals react to music in real time.</p>
                     </div>
                     <div class="button-item" data-button="fullscreen">
-                        <h4>
+                        <h4 data-i18n="controls.fullscreen">
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
                             </svg>
                             Fullscreen
                         </h4>
-                        <p>Přepněte do celoobrazovkového režimu pro perfektní VJ show bez rušivých prvků.</p>
+                        <p data-i18n="controls.fullscreen.desc">Switch to fullscreen mode for perfect VJ show without distracting elements.</p>
                     </div>
                     <div class="button-item" data-button="projection">
-                        <h4>
+                        <h4 data-i18n="controls.projection">
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
                             </svg>
-                            Projekční okno
+                            Projection window
                         </h4>
-                        <p>Otevřete samostatné okno pro projektor, zatímco ovládáte z hlavního okna. Perfektní pro živé vystoupení.</p>
+                        <p data-i18n="controls.projection.desc">Open a separate window for projector while controlling from the main window. Perfect for live performance.</p>
                     </div>
                     <div class="button-item" data-button="save">
-                        <h4>
+                        <h4 data-i18n="controls.save">
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
                             </svg>
-                            Uložit
+                            Save
                         </h4>
-                        <p>Uložte celou vaši session včetně všech efektů, médií a nastavení do jednoho souboru. Všechna data zůstávají na vašem zařízení.</p>
+                        <p data-i18n="controls.save.desc">Save your entire session including all effects, media and settings to a single file. All data stays on your device.</p>
                     </div>
                     <div class="button-item" data-button="load">
-                        <h4>
+                        <h4 data-i18n="controls.load">
                             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20 6h-8l-2-2H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-1 8h-3v3h-2v-3h-3v-2h3V9h2v3h3v2z"/>
                             </svg>
-                            Načíst
+                            Load
                         </h4>
-                        <p>Načtěte dříve uloženou session. Obnovte všechny vaše efekty, sekvence a nastavení jedním kliknutím.</p>
+                        <p data-i18n="controls.load.desc">Load a previously saved session. Restore all your effects, sequences and settings with one click.</p>
                     </div>
                     <div class="button-item" data-button="ui-toggle">
-                        <h4>
+                        <h4 data-i18n="controls.ui-toggle">
                             <span class="ui-icons-group">
                                 <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" title="Controls">
                                     <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h10zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/>
@@ -268,13 +273,13 @@
                                     <path d="M13 19V4h8v15h-8zm-2 0H3V4h8v15z"/>
                                 </svg>
                             </span>
-                            Skrýt UI prvky
+                            Hide UI elements
                         </h4>
-                        <p>Skryjte nebo zobrazte ovládací panely (Controls, Sequencer, Right Panel). Ideální pro čistý fullscreen režim nebo dual screen setup.</p>
+                        <p data-i18n="controls.ui-toggle.desc">Hide or show control panels (Controls, Sequencer, Right Panel). Ideal for clean fullscreen mode or dual screen setup.</p>
                     </div>
                     <div class="button-item" data-button="midi">
-                        <h4>MIDI IN</h4>
-                        <p>Výběr MIDI vstupního zařízení pro připojení MIDI kontroleru nebo kláves. Po připojení můžete mapovat MIDI signály na ovládací prvky aplikace.</p>
+                        <h4 data-i18n="controls.midi">MIDI IN</h4>
+                        <p data-i18n="controls.midi.desc">Selection of MIDI input device for connecting MIDI controller or keyboard. After connection, you can map MIDI signals to application controls.</p>
                     </div>
                 </div>
             </div>
@@ -287,19 +292,19 @@
                         <img src="img/Haluzator-sekvencer.png" alt="Haluzator sequencer" class="feature-image">
                     </div>
                     <div class="feature-card-content">
-                        <h2 class="liquid">Sekvencer</h2>
-                        <p class="feature-intro">Výkonný sekvencer pro vytváření komplexních vizuálních kompozic:</p>
+                        <h2 class="liquid" data-i18n="sequencer.title">Sequencer</h2>
+                        <p class="feature-intro" data-i18n="sequencer.intro">Powerful sequencer for creating complex visual compositions:</p>
                         <div class="tuning-controls-columns">
                             <ul>
-                                <li><strong>8 Stránek:</strong> Přepínejte mezi různými náladami a scénami celé show</li>
-                                <li><strong>Flexibilní kroky:</strong> Nastavte 2, 4, 8, nebo 16 kroků podle vašich potřeb</li>
-                                <li><strong>Drag & Drop:</strong> Jednoduše přetáhněte shadery, videa, 3D modely nebo HTML na jednotlivé kroky</li>
-                                <li><strong>Looping:</strong> Zacyklete libovolnou část sekvence pro opakující se efekty</li>
+                                <li data-i18n="sequencer.item1"><strong>8 Pages:</strong> Switch between different moods and scenes of the entire show</li>
+                                <li data-i18n="sequencer.item2"><strong>Flexible steps:</strong> Set 2, 4, 8, or 16 steps according to your needs</li>
+                                <li data-i18n="sequencer.item3"><strong>Drag & Drop:</strong> Simply drag shaders, videos, 3D models or HTML onto individual steps</li>
+                                <li data-i18n="sequencer.item4"><strong>Looping:</strong> Loop any part of the sequence for repeating effects</li>
                             </ul>
                             <ul>
-                                <li><strong>Live VJ Mode:</strong> Aktivujte kroky v reálném čase pomocí klávesnice nebo MIDI</li>
-                                <li><strong>Kombinace médií:</strong> Každý krok může obsahovat shader, video, 3D model a HTML overlay současně</li>
-                                <li><strong>Plynulé přechody:</strong> Automatické fade efekty mezi kroky</li>
+                                <li data-i18n="sequencer.item5"><strong>Live VJ Mode:</strong> Activate steps in real time using keyboard or MIDI</li>
+                                <li data-i18n="sequencer.item6"><strong>Media combinations:</strong> Each step can contain shader, video, 3D model and HTML overlay simultaneously</li>
+                                <li data-i18n="sequencer.item7"><strong>Smooth transitions:</strong> Automatic fade effects between steps</li>
                             </ul>
                         </div>
                     </div>
@@ -308,8 +313,8 @@
                 <!-- Tuning Controls Card -->
                 <div class="feature-card feature-card-fullwidth">
                     <div class="feature-card-content">
-                        <h2 class="liquid">Tuning Controls</h2>
-                        <p class="feature-intro">Kompletní sada ovládacích prvků pro jemné doladění vizuálů v reálném čase:</p>
+                        <h2 class="liquid" data-i18n="tuning.title">Tuning Controls</h2>
+                        <p class="feature-intro" data-i18n="tuning.intro">Complete set of controls for fine-tuning visuals in real time:</p>
                     </div>
                     <div class="feature-card-image">
                         <img src="img/Haluzator-tunning.png" alt="Haluzator tuning controls" class="feature-image">
@@ -317,18 +322,18 @@
                     <div class="feature-card-content">
                         <div class="tuning-controls-columns">
                             <ul>
-                                <li><strong>TEMPO:</strong> Nastavte rychlost přehrávání (6-120 BPM)</li>
-                                <li><strong>OVERLAY:</strong> Průhlednost HTML overlay vrstev</li>
-                                <li><strong>AUDIO:</strong> Síla audio-reaktivních efektů</li>
-                                <li><strong>Blur & Glow:</strong> Rozmazání a svítivé efekty</li>
-                                <li><strong>Chroma & Hue Shift:</strong> Barevné transformace</li>
+                                <li data-i18n="tuning.item1"><strong>TEMPO:</strong> Set playback speed (6-120 BPM)</li>
+                                <li data-i18n="tuning.item2"><strong>OVERLAY:</strong> Transparency of HTML overlay layers</li>
+                                <li data-i18n="tuning.item3"><strong>AUDIO:</strong> Strength of audio-reactive effects</li>
+                                <li data-i18n="tuning.item4"><strong>Blur & Glow:</strong> Blur and glowing effects</li>
+                                <li data-i18n="tuning.item5"><strong>Chroma & Hue Shift:</strong> Color transformations</li>
                             </ul>
                             <ul>
-                                <li><strong>Mandala Segments:</strong> Symetrické efekty</li>
-                                <li><strong>Particles:</strong> Částicové systémy</li>
-                                <li><strong>Saturation:</strong> Intenzita barev a jejich sytost</li>
-                                <li><strong>Speed, Zoom:</strong> Dynamické parametry</li>
-                                <li><strong>Levels:</strong> Shadows, Midtones, Highlights pro profesionální color grading</li>
+                                <li data-i18n="tuning.item6"><strong>Mandala Segments:</strong> Symmetric effects</li>
+                                <li data-i18n="tuning.item7"><strong>Particles:</strong> Particle systems</li>
+                                <li data-i18n="tuning.item8"><strong>Saturation:</strong> Color intensity and saturation</li>
+                                <li data-i18n="tuning.item9"><strong>Speed, Zoom:</strong> Dynamic parameters</li>
+                                <li data-i18n="tuning.item10"><strong>Levels:</strong> Shadows, Midtones, Highlights for professional color grading</li>
                             </ul>
                         </div>
                     </div>
@@ -340,16 +345,16 @@
                         <img src="img/Haluzator-shaders.png" alt="Haluzator shader library" class="feature-image">
                     </div>
                     <div class="feature-card-content">
-                        <h2 class="liquid">Knihovna Shaderů</h2>
-                        <p class="feature-intro">Rozsáhlá kolekce profesionálních vizuálních efektů:</p>
+                        <h2 class="liquid" data-i18n="shaders.title">Shader Library</h2>
+                        <p class="feature-intro" data-i18n="shaders.intro">Extensive collection of professional visual effects:</p>
                         <ul>
-                            <li><strong>150+ předpřipravených shaderů:</strong> Od abstraktních fraktálů přes částicové bouře až po retro glitch art</li>
-                            <li><strong>Kategorizace:</strong> Snadné vyhledávání podle typu efektu</li>
-                            <li><strong>Okamžitý náhled:</strong> Vidíte výsledek ještě před aplikováním</li>
-                            <li><strong>Vlastní shadery:</strong> Vytvářejte si vlastní efekty v GLSL kódu</li>
-                            <li><strong>Monaco Editor:</strong> Profesionální editor s syntax highlighting a autocomplete</li>
-                            <li><strong>Shader kombinace:</strong> Kombinujte více shaderů pro unikátní efekty</li>
-                            <li><strong>Export & Import:</strong> Sdílejte své shadery s komunitou</li>
+                            <li data-i18n="shaders.item1"><strong>150+ pre-made shaders:</strong> From abstract fractals through particle storms to retro glitch art</li>
+                            <li data-i18n="shaders.item2"><strong>Categorization:</strong> Easy search by effect type</li>
+                            <li data-i18n="shaders.item3"><strong>Instant preview:</strong> See the result before applying</li>
+                            <li data-i18n="shaders.item4"><strong>Custom shaders:</strong> Create your own effects in GLSL code</li>
+                            <li data-i18n="shaders.item5"><strong>Monaco Editor:</strong> Professional editor with syntax highlighting and autocomplete</li>
+                            <li data-i18n="shaders.item6"><strong>Shader combinations:</strong> Combine multiple shaders for unique effects</li>
+                            <li data-i18n="shaders.item7"><strong>Export & Import:</strong> Share your shaders with the community</li>
                         </ul>
                     </div>
                 </div>
@@ -357,16 +362,16 @@
                 <!-- Media Library Card -->
                 <div class="feature-card feature-card-horizontal">
                     <div class="feature-card-content">
-                        <h2 class="liquid">Knihovna Médií</h2>
-                        <p class="feature-intro">Nahrajte své vlastní fotky a videa - to je hlavní účel aplikace:</p>
+                        <h2 class="liquid" data-i18n="media.title">Media Library</h2>
+                        <p class="feature-intro" data-i18n="media.intro">Upload your own photos and videos - this is the main purpose of the application:</p>
                         <ul>
-                            <li><strong>Vaše fotky:</strong> Nahrajte fotky z dovolené, oslav nebo jakékoliv jiné momenty. Podpora všech běžných formátů (JPG, PNG, GIF, WebP).</li>
-                            <li><strong>Vaše videa:</strong> Načtěte vlastní video klipy a aplikujte na ně vizuální efekty v reálném čase. Perfektní pro promítání doma.</li>
-                            <li><strong>3D Modely (.obj):</strong> Volitelně přidejte 3D modely pro ještě zajímavější efekty.</li>
-                            <li><strong>HTML Overlay:</strong> Přidejte vlastní HTML obsah s CSS a JavaScriptem pro interaktivní vrstvy.</li>
-                            <li><strong>Jednoduché nahrání:</strong> Jednoduše přetáhněte soubory do aplikace nebo použijte tlačítko pro výběr.</li>
-                            <li><strong>Lokální úložiště:</strong> Všechna vaše média se ukládají lokálně - žádné nahrávání na servery.</li>
-                            <li><strong>Zdarma pro každého:</strong> Aplikace je kompletně zdarma a dostupná pro všechny.</li>
+                            <li data-i18n="media.item1"><strong>Your photos:</strong> Upload photos from vacation, celebrations or any other moments. Support for all common formats (JPG, PNG, GIF, WebP).</li>
+                            <li data-i18n="media.item2"><strong>Your videos:</strong> Load your own video clips and apply visual effects to them in real time. Perfect for home projection.</li>
+                            <li data-i18n="media.item3"><strong>3D Models (.obj):</strong> Optionally add 3D models for even more interesting effects.</li>
+                            <li data-i18n="media.item4"><strong>HTML Overlay:</strong> Add custom HTML content with CSS and JavaScript for interactive layers.</li>
+                            <li data-i18n="media.item5"><strong>Simple upload:</strong> Simply drag files into the application or use the button to select.</li>
+                            <li data-i18n="media.item6"><strong>Local storage:</strong> All your media is stored locally - no uploading to servers.</li>
+                            <li data-i18n="media.item7"><strong>Free for everyone:</strong> The application is completely free and available to everyone.</li>
                         </ul>
                     </div>
                     <div class="feature-card-image">
@@ -379,35 +384,35 @@
 
     <section class="performance">
         <div class="container">
-            <h2 class="section-title liquid">Jednoduché ovládání pro každého</h2>
-            <p class="section-subtitle">Haluzator je navržen tak, aby ho mohl používat kdokoliv - od začátečníků po pokročilé uživatele.</p>
+            <h2 class="section-title liquid" data-i18n="performance.title">Simple controls for everyone</h2>
+            <p class="section-subtitle" data-i18n="performance.subtitle">Haluzator is designed so that anyone can use it - from beginners to advanced users.</p>
             <div class="grid-3">
                 <div class="feature-box">
-                    <h3>
+                    <h3 data-i18n="performance.simple.title">
                         <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/>
                         </svg>
-                        Jednoduché ovládání
+                        Simple controls
                     </h3>
-                    <p>Přetáhněte soubory, vyberte efekt a hrajte. Žádné složité nastavení.</p>
+                    <p data-i18n="performance.simple.desc">Drag files, select effect and play. No complicated setup.</p>
                 </div>
                 <div class="feature-box">
-                    <h3>
+                    <h3 data-i18n="performance.audio.title">
                         <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                         </svg>
-                        Audio reaktivita
+                        Audio reactivity
                     </h3>
-                    <p>Připojte mikrofon nebo hudbu a nechte efekty reagovat na zvuk.</p>
+                    <p data-i18n="performance.audio.desc">Connect microphone or music and let effects react to sound.</p>
                 </div>
                 <div class="feature-box">
-                    <h3>
+                    <h3 data-i18n="performance.home.title">
                         <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12zm-5.01-4H17v-4h-1.01v4z"/>
                         </svg>
-                        Domácí promítání
+                        Home projection
                     </h3>
-                    <p>Perfektní pro promítání na zeď doma, na party nebo při setkání s přáteli.</p>
+                    <p data-i18n="performance.home.desc">Perfect for projection on wall at home, at parties or when meeting with friends.</p>
                 </div>
             </div>
         </div>
@@ -415,22 +420,22 @@
 
     <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title liquid">Jak to funguje?</h2>
+            <h2 class="section-title liquid" data-i18n="howitworks.title">How it works?</h2>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Nahrajte</h3>
-                    <p>Nahrajte své fotky nebo videa - jednoduše přetáhněte soubory do aplikace.</p>
+                    <h3 data-i18n="howitworks.step1.title">Upload</h3>
+                    <p data-i18n="howitworks.step1.desc">Upload your photos or videos - simply drag files into the application.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Vyberte efekt</h3>
-                    <p>Vyberte jeden z 150+ vizuálních efektů a aplikujte ho na vaše médium.</p>
+                    <h3 data-i18n="howitworks.step2.title">Choose effect</h3>
+                    <p data-i18n="howitworks.step2.desc">Choose one of 150+ visual effects and apply it to your media.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Promítejte</h3>
-                    <p>Spusťte <em>Spacebarem</em> a promítejte svou úžasnou show!</p>
+                    <h3 data-i18n="howitworks.step3.title">Project</h3>
+                    <p data-i18n="howitworks.step3.desc">Start with <em>Spacebar</em> and project your amazing show!</p>
                 </div>
             </div>
         </div>
@@ -443,8 +448,8 @@
                 <div class="carousel-wrapper">
                     <div class="carousel-slide active">
                         <div class="card">
-                            <h3>Pro každého s fotkami a videi</h3>
-                            <p class="card-subtitle">Promítněte své vzpomínky s úžasnými efekty</p>
+                            <h3 data-i18n="users.card1.title">For everyone with photos and videos</h3>
+                            <p class="card-subtitle" data-i18n="users.card1.subtitle">Project your memories with amazing effects</p>
                             <div class="card-image">
                                 <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <!-- Rodina s fotoaparátem -->
@@ -464,15 +469,15 @@
                                     <circle cx="157" cy="38" r="3" fill="currentColor" opacity="0.3"/>
                                 </svg>
                             </div>
-                            <p class="card-story">
-                                Máte stovky fotek z dovolené, videa z oslav nebo rodinných setkání? Haluzator vám umožní proměnit tyto vzpomínky v úžasnou vizuální show. Nahrajte své fotky a videa, aplikujte profesionální efekty a promítejte je na zeď během rodinných večerů nebo oslav. Vytvořte si vlastní digitální galerii, která ožije díky dynamickým přechodům a audio-reaktivním efektům. Vaše vzpomínky tak získají nový rozměr a stanou se součástí nezapomenutelných momentů.
+                            <p class="card-story" data-i18n="users.card1.story">
+                                Do you have hundreds of photos from vacation, videos from celebrations or family gatherings? Haluzator allows you to transform these memories into an amazing visual show. Upload your photos and videos, apply professional effects and project them on the wall during family evenings or celebrations. Create your own digital gallery that comes alive thanks to dynamic transitions and audio-reactive effects. Your memories thus gain a new dimension and become part of unforgettable moments.
                             </p>
                         </div>
                     </div>
                     <div class="carousel-slide">
                         <div class="card">
-                            <h3>Pro domácí uživatele</h3>
-                            <p class="card-subtitle">Vytvořte úžasnou atmosféru na domácích oslavách</p>
+                            <h3 data-i18n="users.card2.title">For home users</h3>
+                            <p class="card-subtitle" data-i18n="users.card2.subtitle">Create amazing atmosphere at home celebrations</p>
                             <div class="card-image">
                                 <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <!-- Dům s osvětleným oknem -->
@@ -494,15 +499,15 @@
                                     <circle cx="150" cy="105" r="2" fill="currentColor" opacity="0.3"/>
                                 </svg>
                             </div>
-                            <p class="card-story">
-                                Chcete vytvořit nezapomenutelnou atmosféru na narozeninové oslavě, svatbě nebo jen tak při setkání s přáteli? Haluzator je ideálním řešením pro domácí promítání. Připojte projektor nebo použijte velkou televizi, nahrajte fotky hostů nebo tematické videa a nechte je pulzovat do rytmu hudby. S audio-reaktivními efekty se vaše show automaticky synchronizuje s hudbou, kterou hrajete. Vytvořte profesionální atmosféru bez nutnosti složitého nastavení – vše funguje jednoduše a intuitivně.
+                            <p class="card-story" data-i18n="users.card2.story">
+                                Want to create an unforgettable atmosphere at a birthday party, wedding or just when meeting with friends? Haluzator is the ideal solution for home projection. Connect a projector or use a large TV, upload photos of guests or thematic videos and let them pulse to the rhythm of music. With audio-reactive effects, your show automatically synchronizes with the music you play. Create a professional atmosphere without the need for complicated setup - everything works simply and intuitively.
                             </p>
                         </div>
                     </div>
                     <div class="carousel-slide">
                         <div class="card">
-                            <h3>Pro kreativce a experimentátory</h3>
-                            <p class="card-subtitle">Experimentujte s grafikou bez hranic - zdarma a jednoduše</p>
+                            <h3 data-i18n="users.card3.title">For creatives and experimenters</h3>
+                            <p class="card-subtitle" data-i18n="users.card3.subtitle">Experiment with graphics without limits - free and simple</p>
                             <div class="card-image">
                                 <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <!-- Kreativní workspace -->
@@ -523,8 +528,8 @@
                                     <path d="M155 110 L145 105 M150 105 L150 115" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
                                 </svg>
                             </div>
-                            <p class="card-story">
-                                Jste umělec, designér nebo prostě někdo, kdo miluje experimentování s grafikou? Haluzator vám otevírá nekonečné možnosti kreativního vyjádření. Vytvářejte vlastní shadery v GLSL, kombinujte efekty, experimentujte s 3D modely a HTML overlay vrstvami. S profesionálním Monaco editorem máte plnou kontrolu nad každým aspektem vizuálů. Všechno je zdarma, bez omezení a bez nutnosti složitého nastavení. Sdílejte své kreace s komunitou nebo je používejte pro vlastní projekty. Hranice existují jen ve vaší představivosti.
+                            <p class="card-story" data-i18n="users.card3.story">
+                                Are you an artist, designer or just someone who loves experimenting with graphics? Haluzator opens endless possibilities for creative expression. Create your own shaders in GLSL, combine effects, experiment with 3D models and HTML overlay layers. With the professional Monaco editor, you have full control over every aspect of visuals. Everything is free, without restrictions and without the need for complicated setup. Share your creations with the community or use them for your own projects. The limits exist only in your imagination.
                             </p>
                         </div>
                     </div>
@@ -540,23 +545,24 @@
 
     <section id="download" class="cta-final">
         <div class="container">
-            <h2 class="section-title liquid">Začněte promítat své fotky a videa</h2>
-            <p>Stáhněte si aplikaci zdarma, nahrajte své fotky a videa a vytvořte úžasnou vizuální show. Všechna nastavení a média se ukládají lokálně na vašem počítači.</p>
+            <h2 class="section-title liquid" data-i18n="download.title">Start projecting your photos and videos</h2>
+            <p data-i18n="download.text">Download the application for free, upload your photos and videos and create an amazing visual show. All settings and media are stored locally on your computer.</p>
 
             <div class="download-box">
-                <h3>Stáhněte si Haluzator zdarma</h3>
-                <p>Verze pro Windows | Webová verze - dostupné pro každého</p>
-                <a href="https://github.com/LukasWana/Haluzator-stable/releases/download/release-1.0.0/Haluzator-0.0.0-portable.exe" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Stáhnout nyní</a>
+                <h3 data-i18n="download.box.title">Download Haluzator for free</h3>
+                <p data-i18n="download.box.subtitle">Windows version | Web version - available to everyone</p>
+                <a href="https://github.com/LukasWana/Haluzator-stable/releases/download/release-1.0.0/Haluzator-0.0.0-portable.exe" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" data-i18n="download.button">Download now</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Haluzator. Všechna práva vyhrazena.</p>
+            <p data-i18n="footer.copyright">&copy; 2025 Haluzator. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="bg-animation.js"></script>
     <script src="script.js"></script>
 </body>

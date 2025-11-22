@@ -90,52 +90,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Interactive UI buttons image highlighting
-    const uiButtonsImage = document.getElementById('ui-buttons-image');
-    const buttonItems = document.querySelectorAll('.button-item[data-button]');
-
-    if (uiButtonsImage && buttonItems.length > 0) {
-        let highlightTimeout;
-        let currentHighlightedIndex = -1;
-
-        function highlightNextButton() {
-            // Remove highlight from all buttons
-            buttonItems.forEach(item => item.classList.remove('highlighted'));
-
-            // Highlight next button
-            currentHighlightedIndex = (currentHighlightedIndex + 1) % buttonItems.length;
-            buttonItems[currentHighlightedIndex].classList.add('highlighted');
-
-            // Scroll highlighted button into view if needed
-            const highlightedButton = buttonItems[currentHighlightedIndex];
-            highlightedButton.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        function startHighlighting() {
-            // Start highlighting immediately
-            highlightNextButton();
-
-            // Continue highlighting every 1.5 seconds
-            highlightTimeout = setInterval(highlightNextButton, 1500);
-        }
-
-        function stopHighlighting() {
-            clearInterval(highlightTimeout);
-            buttonItems.forEach(item => item.classList.remove('highlighted'));
-            currentHighlightedIndex = -1;
-        }
-
-        // Start highlighting on mouse enter
-        uiButtonsImage.addEventListener('mouseenter', startHighlighting);
-
-        // Stop highlighting on mouse leave
-        uiButtonsImage.addEventListener('mouseleave', stopHighlighting);
-
-        // Also allow manual highlighting by hovering over image
-        uiButtonsImage.addEventListener('mousemove', () => {
-            if (!highlightTimeout) {
-                startHighlighting();
-            }
-        });
-    }
+    // Interactive UI buttons image highlighting - REMOVED
 });

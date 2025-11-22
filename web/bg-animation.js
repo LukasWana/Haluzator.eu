@@ -1,147 +1,112 @@
 /*
-Background Animation - CodePen Style Particle Effect
-Optimized for performance
+Short && Basic, Custom Shaped 3D Particle Object.
 */
 
 (function() {
-    var canvas = document.getElementById('bg');
-    if (!canvas) {
-        console.warn('Canvas element #bg not found');
-        return;
-    }
+    'use strict';
 
-    var ctx = canvas.getContext('2d');
-    var particles = [];
-    var particleCount = 50; // Optimalizováno pro výkon
-    var mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 }; // Začínáme ve středu
-    var w, h;
+    function init() {
+        var c = document.getElementById('bg');
 
-    function resize() {
-        w = canvas.width = window.innerWidth;
-        h = canvas.height = window.innerHeight;
-    }
-
-    resize();
-
-    function Particle() {
-        this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.baseRadius = Math.random() * 2 + 1; // Základní velikost
-        this.radius = this.baseRadius;
-    }
-
-    Particle.prototype.update = function() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x < 0 || this.x > w) this.vx *= -1;
-        if (this.y < 0 || this.y > h) this.vy *= -1;
-
-        // Reakce na pohyb kurzoru - částice jsou přitahovány k myši (jako v původním kódu)
-        var dx = mouse.x - this.x;
-        var dy = mouse.y - this.y;
-        var distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance > 0 && distance < 150) {
-            var force = (150 - distance) / 150;
-            this.vx += (dx / distance) * force * 0.03; // Zvýšená síla pro výraznější reakci
-            this.vy += (dy / distance) * force * 0.03;
-
-            // Efekt přiblížení - částice se zvětšují při přiblížení k myši
-            var zoomFactor = 1 + (1 - distance / 150) * 1.5; // Zvětšení až 2.5x při přiblížení
-            this.radius = this.baseRadius * zoomFactor;
-        } else {
-            // Vrátit na základní velikost když je daleko
-            this.radius = this.baseRadius;
+        if (!c) {
+            console.warn('Canvas element #bg not found');
+            return;
         }
 
-        // Omezení rychlosti pro plynulost
-        var maxSpeed = 2.5;
-        var speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-        if (speed > maxSpeed) {
-            this.vx = (this.vx / speed) * maxSpeed;
-            this.vy = (this.vy / speed) * maxSpeed;
-        }
-    };
+        var $ = c.getContext("2d");
 
-    Particle.prototype.draw = function() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'hsla(260, 80%, 70%, 0.8)';
-        ctx.fill();
-    };
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
 
-    // Inicializace částic
-    for (var i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-    }
+        var arr = [],
+            midX = c.width / 2,
+            midY = c.height / 2,
+            rotX = 0,
+            rotY = 0,
+            u = 0,
+            vp = 550,
+            speed = .5, // RYCHLOST ANIMACE - čím větší, tím rychlejší (1.0 = normální rychlost)
+            d, currX, currY,
+            x, y, z, g;
 
-    // Mouse tracking - reakce na pohyb kurzoru
-    document.addEventListener('mousemove', function(e) {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-
-    // Reset pozice myši při opuštění okna
-    document.addEventListener('mouseleave', function() {
-        mouse.x = w / 2;
-        mouse.y = h / 2;
-    });
-
-    function animate() {
-        requestAnimationFrame(animate);
-
-        // Gradient pozadí
-        var gradient = ctx.createLinearGradient(0, 0, w, h);
-        gradient.addColorStop(0, 'hsla(240, 50%, 10%, 1)');
-        gradient.addColorStop(0.5, 'hsla(280, 60%, 15%, 1)');
-        gradient.addColorStop(1, 'hsla(300, 40%, 5%, 1)');
-
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, w, h);
-
-        // Aktualizace a vykreslení částic
-        for (var i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
+        var pt = function(x, y, z) {
+          var zpos = z * Math.cos(rotX) - x * Math.sin(rotX),
+              xpos = z * Math.sin(rotX) + x * Math.cos(rotX),
+              ypos = y * Math.cos(rotY) - zpos * Math.sin(rotY),
+              zpos = y * Math.sin(rotY) + zpos * Math.cos(rotY);
+              d = 1 / (zpos / vp + 1);
+              currX = xpos * d + midX;
+              currY = ypos * d + midY;
         }
 
-        // Spojení částic
-        ctx.strokeStyle = 'hsla(260, 80%, 60%, 0.3)';
-        ctx.lineWidth = 1;
+        for (var i = -Math.PI; i < Math.PI; i += Math.PI / 60) {
+          for (var j = -Math.PI; j < Math.PI; j += Math.PI / 20) {
+            var px = Math.sin(i*3) % Math.abs(Math.sqrt(5) + Math.cos(j)),
+                py = Math.sin(i * 3 * Math.PI / 3) /
+                Math.abs(Math.sqrt(5) * Math.cos(j * 3 * Math.PI / 3)),
+                pz = Math.cos(i * 3 * Math.PI / 3) /
+                Math.abs(Math.sqrt(5) * Math.cos(j * 3 * Math.PI / 3));
+                arr.push(px * c.width * 0.218);
+                arr.push(py * c.width * 0.218);
+                arr.push(pz * c.width * 0.218);
+          }
+        }
 
-        for (var i = 0; i < particles.length; i++) {
-            for (var j = i + 1; j < particles.length; j++) {
-                var dx = particles[i].x - particles[j].x;
-                var dy = particles[i].y - particles[j].y;
-                var distance = Math.sqrt(dx * dx + dy * dy);
+        var draw = function() {
+            var g_ = $.createLinearGradient(c.width + c.width,
+                c.height + c.height * 1.5,
+                c.width + c.width, 1);
+                g_.addColorStop(0, 'hsla(253, 5%, 95%, 1)');
+                g_.addColorStop(0.5, 'hsla(314, 95%, 25%, 1)');
+                g_.addColorStop(0.8, 'hsla(259, 95%, 15%, 1)');
+                g_.addColorStop(1, 'hsla(0, 0%, 5%, 1)');
+                $.clearRect(0, 0, c.width, c.height);
+                $.fillStyle = g_;
+                $.fillRect(0, 0, c.width, c.height);
 
-                if (distance < 150) {
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = 'hsla(260, 80%, 60%, ' + (1 - distance / 150) * 0.3 + ')';
-                    ctx.stroke();
-                }
+            var a = arr.length;
+                rotX += 0.02 * speed; // RYCHLOST ROTACE X
+                rotY += 0.02 * speed; // RYCHLOST ROTACE Y
+                u -= .2 * speed; // RYCHLOST ZMĚNY BARVY
+
+            for (var i = 0; i < a; i += 40) {
+              pt(arr[i], arr[i + 1], arr[i + 2]);
+              $.globalCompositeOperation = 'lighter';
+              $.fillStyle = 'hsla(' + u * i / 100 + ',85%,70%,.2)';
+              $.fillRect(currX, currY, 5, 5);
+              $.fill();
             }
+          window.requestAnimationFrame(draw);
         }
+
+        draw();
+
+        window.addEventListener('resize', function() {
+          c.width = window.innerWidth;
+          c.height = window.innerHeight;
+          midX = c.width / 2;
+          midY = c.height / 2;
+          // Reinicializace částic při resize
+          arr = [];
+          for (var i = -Math.PI; i < Math.PI; i += Math.PI / 60) {
+            for (var j = -Math.PI; j < Math.PI; j += Math.PI / 20) {
+              var px = Math.sin(i*3) % Math.abs(Math.sqrt(5) + Math.cos(j)),
+                  py = Math.sin(i * 3 * Math.PI / 3) /
+                  Math.abs(Math.sqrt(5) * Math.cos(j * 3 * Math.PI / 3)),
+                  pz = Math.cos(i * 3 * Math.PI / 3) /
+                  Math.abs(Math.sqrt(5) * Math.cos(j * 3 * Math.PI / 3));
+                  arr.push(px * c.width * 0.18);
+                  arr.push(py * c.width * 0.18);
+                  arr.push(pz * c.width * 0.18);
+            }
+          }
+        }, false);
     }
 
-    animate();
-
-    // Resize handler
-    var resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            resize();
-            // Reinicializace částic při resize
-            particles = [];
-            for (var i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }, 100);
-    });
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 })();

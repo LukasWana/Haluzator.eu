@@ -164,7 +164,6 @@ p {
     z-index: -1;
     pointer-events: none;
     /* Remove background gradient - CodePen effect will handle it */
-    opacity: 0.9; /* Přidat tuto řádku - hodnota 0.0 až 1.0 */
     background: #000000;
 }
 
@@ -229,6 +228,32 @@ p {
 
 .nav-links a:hover {
     color: var(--accent-primary);
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.lang-btn .flag-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 /* Buttons - App-style design */
@@ -918,12 +943,7 @@ section {
 }
 
 .buttons-image {
-    cursor: crosshair;
     transition: opacity 0.3s ease;
-}
-
-.buttons-image:hover {
-    opacity: 0.9;
 }
 
 .button-item h4 {
@@ -1072,6 +1092,7 @@ footer {
     padding: 40px 0;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #000000; /* Černé pozadí */
     color: #666;
     position: relative;
     z-index: 2;
