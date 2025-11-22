@@ -1840,7 +1840,11 @@ footer {
     }
 
     .carousel-wrapper {
-        min-height: 450px;
+        min-height: auto !important;
+    }
+
+    .showcase-placeholder {
+        min-height: auto !important;
     }
 
     .carousel-indicators {
