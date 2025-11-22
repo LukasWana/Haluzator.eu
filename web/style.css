@@ -1718,6 +1718,19 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Ensure sections are visible on mobile */
+    section {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .section-title {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -1738,6 +1751,45 @@ footer {
 
     .grid-2, .grid-3 {
         grid-template-columns: 1fr;
+        display: grid !important;
+        visibility: visible !important;
+    }
+
+    /* Ensure cards are visible on mobile */
+    .card {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .card-graphics {
+        display: flex !important;
+        visibility: visible !important;
+    }
+
+    .card h3,
+    .card p,
+    .card ul,
+    .card li {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .feature-card-content h2,
+    .feature-card-content h3,
+    .feature-card-content p,
+    .feature-card-content ul,
+    .feature-card-content li {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .feature-intro {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .card-graphics {
@@ -1791,6 +1843,29 @@ footer {
 
     .buttons-description {
         grid-template-columns: 1fr;
+        display: grid !important;
+        visibility: visible !important;
+    }
+
+    .button-item {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .tuning-controls-columns {
+        display: grid !important;
+        visibility: visible !important;
+    }
+
+    .tuning-controls-columns ul {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .feature-card-content ul {
+        display: block !important;
+        visibility: visible !important;
     }
 
     .buttons-showcase {
@@ -1842,5 +1917,40 @@ footer {
 
     .feature-card-reverse {
         flex-direction: column;
+    }
+
+    /* Ensure feature cards are visible on mobile */
+    .feature-card {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Ensure feature card images are visible on mobile */
+    .feature-card-image {
+        min-height: 200px;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .feature-card-image img {
+        display: block !important;
+        width: 100%;
+        height: auto;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Ensure feature card content is visible */
+    .feature-card-content {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .feature-cards-grid {
+        display: grid !important;
+        visibility: visible !important;
     }
 }
