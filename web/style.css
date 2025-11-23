@@ -232,6 +232,7 @@ p {
 
 /* Language Switcher */
 .language-switcher {
+    position: relative;
     display: flex;
     align-items: center;
     margin-right: 10px;
@@ -251,9 +252,67 @@ p {
 }
 
 .lang-btn .flag-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     display: block;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.language-switcher.active .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 15px;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-main);
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.lang-option.active {
+    background-color: var(--accent-primary);
+    color: #ffffff;
+}
+
+.lang-option:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+.lang-option:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+.lang-option .flag-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
 }
 
 /* Buttons - App-style design */
