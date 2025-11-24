@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">Haluzator - Conductor of Your Visual Universe</title>
+    <meta name="description" content="" data-i18n="meta.description">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=Calistoga&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="img/Haluzator-logo.svg" alt="Haluzator" class="logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="#" data-download-url target="_blank" rel="noopener noreferrer" class="btn btn-small" data-i18n="nav.download">Download</a>
+                <a href="#" data-demo-url target="_blank" rel="noopener noreferrer" class="btn btn-small" data-i18n="nav.try">Try it</a>
+                <div class="language-switcher">
+                    <button class="lang-btn" id="lang-switcher" aria-label="Switch language" aria-expanded="false">
+                        <img src="img/001-united-kingdom.svg" alt="English" class="flag-icon" id="lang-flag">
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <button class="lang-option" data-lang="en">
+                            <img src="img/001-united-kingdom.svg" alt="English" class="flag-icon"> English
+                        </button>
+                        <button class="lang-option" data-lang="cs">
+                            <img src="img/002-czech-republic.svg" alt="Čeština" class="flag-icon"> Čeština
+                        </button>
+                        <button class="lang-option" data-lang="sk">
+                            <img src="img/003-slovak.svg" alt="Slovenčina" class="flag-icon"> Slovenčina
+                        </button>
+                        <button class="lang-option" data-lang="de">
+                            <img src="img/004-detsch.svg" alt="Deutsch" class="flag-icon"> Deutsch
+                        </button>
+                        <button class="lang-option" data-lang="pl">
+                            <img src="img/006-polski.svg" alt="Polski" class="flag-icon"> Polski
+                        </button>
+                        <button class="lang-option" data-lang="fr">
+                            <img src="img/005-france.svg" alt="Français" class="flag-icon"> Français
+                        </button>
+                        <button class="lang-option" data-lang="es">
+                            <img src="img/008-spain.svg" alt="Español" class="flag-icon"> Español
+                        </button>
+                        <button class="lang-option" data-lang="uk">
+                            <img src="img/009-ukrain.svg" alt="Українська" class="flag-icon"> Українська
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="liquid" data-i18n="hero.title" data-text="">Show effects in rhythm with your music</h1>
+            <div class="showcase-placeholder">
+                <img src="img/Haluzator-screen.png" alt="Haluzator screenshot" class="screenshot-img">
+            </div>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Simple application for home projection. Upload your photos and videos, add effects and create amazing visual shows. Free for Windows and web.</p>
+            <div class="cta-group">
+                <a href="#" data-download-url target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="hero.download">Download for Windows</a>
+                <a href="#" data-demo-url target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="hero.try">Try in browser</a>
+            </div>
+            <p class="download-warning hero-download-warning" data-i18n="download.warning"></p>
+            <div class="test-mode-banner" data-i18n="hero.testmode">Functional prototype in test mode</div>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <h2 class="section-title liquid" data-i18n="intro.title">What is Haluzator</h2>
+
+            <p class="intro-text" data-i18n="intro.text">
+                Haluzator is a <strong>free application for everyone</strong> who wants to project their own photos and videos with amazing effects. Perfect for <strong>home projection, parties or creative projects</strong>. Upload your media, choose an effect and let the graphics pulse to the rhythm of music.
+            </p>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title liquid" data-i18n="features.title">Why you'll love it?</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-graphics">
+                        <!-- Grafika 1: Fotka -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="15" width="60" height="50" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="35" cy="30" r="5" fill="currentColor" opacity="0.6"/>
+                                <path d="M20 50l15-10 10 8 15-12 10 14v6H20v-6z" fill="currentColor" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 2: Video -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="25" y="20" width="50" height="35" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M40 35l15 10-15 10V35z" fill="currentColor" opacity="0.8"/>
+                                <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 3: Drag & Drop -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="30" width="40" height="30" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M35 40h30M35 45h20M35 50h25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M20 20l10 10-10 10M80 20l-10 10 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 data-i18n="features.upload.title">Upload your photos and videos</h3>
+                    <p data-i18n="features.upload.text">Main purpose of the application: <strong>project your own content</strong>. Upload vacation photos, celebration videos or any other content and transform it into an amazing visual show.</p>
+                    <ul>
+                        <li data-i18n="features.upload.item1">Support for all common formats (JPG, PNG, MP4, WebM)</li>
+                        <li data-i18n="features.upload.item2">Simple upload by dragging files</li>
+                        <li data-i18n="features.upload.item3">Instant preview: See everything in real time</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-graphics">
+                        <!-- Grafika 1: Shader -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
+                                <circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+                                <path d="M50 20 Q70 50 50 80 Q30 50 50 20" fill="currentColor" opacity="0.2"/>
+                                <path d="M20 50 Q50 30 80 50 Q50 70 20 50" fill="currentColor" opacity="0.2"/>
+                                <circle cx="50" cy="50" r="3" fill="currentColor" opacity="0.8"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 2: 3D Model -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50 20 L70 35 L50 50 L30 35 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M50 50 L70 65 L50 80 L30 65 Z" fill="currentColor" opacity="0.4" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M50 20 L50 50 M70 35 L70 65 M30 35 L30 65" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 3: Fraktál v kruhu -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="35" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                                <!-- Fraktální spirálový vzor -->
+                                <path d="M50 50 L50 15 A35 35 0 0 1 85 50 Z" fill="currentColor" opacity="0.3"/>
+                                <path d="M50 50 L85 50 A35 35 0 0 1 50 85 Z" fill="currentColor" opacity="0.4"/>
+                                <path d="M50 50 L50 85 A35 35 0 0 1 15 50 Z" fill="currentColor" opacity="0.3"/>
+                                <path d="M50 50 L15 50 A35 35 0 0 1 50 15 Z" fill="currentColor" opacity="0.4"/>
+                                <!-- Vnitřní fraktální struktura -->
+                                <path d="M50 50 L50 30 A20 20 0 0 1 70 50 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M50 50 L70 50 A20 20 0 0 1 50 70 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M50 50 L50 70 A20 20 0 0 1 30 50 Z" fill="currentColor" opacity="0.5"/>
+                                <path d="M50 50 L30 50 A20 20 0 0 1 50 30 Z" fill="currentColor" opacity="0.5"/>
+                                <!-- Střed -->
+                                <circle cx="50" cy="50" r="4" fill="currentColor" opacity="0.8"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 data-i18n="features.effects.title">150+ visual effects</h3>
+                    <p data-i18n="features.effects.text">Add professional effects with dynamic shaders – advanced GPU filters for real-time image transformation. Kaleidoscopes, audio-reactive effects and abstract visuals, all smooth and without slowdown.</p>
+                    <ul>
+                        <li data-i18n="features.effects.item1"><strong>Shaders:</strong> More than 150 pre-made effects for every taste</li>
+                        <li data-i18n="features.effects.item2"><strong>3D Models:</strong> Optionally add 3D objects (.obj)</li>
+                        <li data-i18n="features.effects.item3"><strong>HTML Overlay:</strong> Add texts or custom graphics</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-graphics">
+                        <!-- Grafika 1: Televize -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="25" y="20" width="50" height="35" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <rect x="30" y="25" width="40" height="25" fill="currentColor" opacity="0.1"/>
+                                <circle cx="50" cy="37" r="3" fill="currentColor" opacity="0.4"/>
+                                <rect x="35" cy="45" y="45" width="30" height="3" rx="1" fill="currentColor" opacity="0.3"/>
+                                <rect x="20" y="58" width="60" height="8" rx="1" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="35" cy="62" r="1.5" fill="currentColor" opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 2: Projektor -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="35" width="40" height="25" rx="2" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="50" cy="47" r="8" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="50" cy="47" r="4" fill="currentColor" opacity="0.5"/>
+                                <rect x="25" y="30" width="50" height="5" rx="1" fill="currentColor" opacity="0.4"/>
+                                <path d="M35 60 L50 70 L65 60" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+                                <rect x="40" y="72" width="20" height="3" rx="1" fill="currentColor" opacity="0.4"/>
+                            </svg>
+                        </div>
+                        <!-- Grafika 3: Počítač -->
+                        <div class="feature-graphic">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="25" width="60" height="40" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                <rect x="25" y="30" width="50" height="30" fill="currentColor" opacity="0.1"/>
+                                <rect x="30" y="35" width="40" height="20" rx="1" fill="currentColor" opacity="0.15"/>
+                                <circle cx="50" cy="45" r="2" fill="currentColor" opacity="0.4"/>
+                                <rect x="35" y="50" width="30" height="2" rx="1" fill="currentColor" opacity="0.3"/>
+                                <rect x="40" y="55" width="20" height="2" rx="1" fill="currentColor" opacity="0.3"/>
+                                <rect x="35" y="68" width="30" height="4" rx="1" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 data-i18n="features.mixer.title">Visual Show Mixer</h3>
+                    <p data-i18n="features.mixer.text">Create smooth transitions between your media with crossfade effects, layering and various blend modes. Mix videos, photos and shaders in real time for professional visual flow.</p>
+                    <ul>
+                        <li data-i18n="features.mixer.item1"><strong>8 Pages:</strong> Switch between different parts of your show</li>
+                        <li data-i18n="features.mixer.item2"><strong>Rhythmic steps:</strong> Synchronize with music</li>
+                        <li data-i18n="features.mixer.item3"><strong>Looping:</strong> Loop your favorite moments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="controls" class="controls">
+        <div class="container">
+            <h2 class="section-title liquid" data-i18n="controls.title">Controls and features</h2>
+            <p class="section-subtitle" data-i18n="controls.subtitle">Complete overview of all buttons and functions in the main application panel. Each button gives you control over the visual show:</p>
+
+            <div class="buttons-showcase">
+                <img src="img/Haluzator-buttons.png" alt="Haluzator ovládací tlačítka" class="buttons-image" id="ui-buttons-image">
+                <div class="buttons-description">
+                    <div class="button-item" data-button="fps">
+                        <h4 data-i18n="controls.fps">FPS</h4>
+                        <p data-i18n="controls.fps.desc">Display of current frames per second. Monitor rendering performance in real time and optimize settings for smooth visualization.</p>
+                    </div>
+                    <div class="button-item" data-button="play">
+                        <h4 data-i18n="controls.play">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Play /
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                            </svg>
+                            Pause
+                        </h4>
+                        <p data-i18n="controls.play.desc">Start or pause visual playback. Keyboard shortcut: <strong>Spacebar</strong></p>
+                    </div>
+                    <div class="button-item" data-button="microphone">
+                        <h4 data-i18n="controls.microphone">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z"/>
+                            </svg>
+                            Microphone
+                        </h4>
+                        <p data-i18n="controls.microphone.desc">Turn audio input from microphone on or off for audio-reactive effects. Visuals react to music in real time.</p>
+                    </div>
+                    <div class="button-item" data-button="fullscreen">
+                        <h4 data-i18n="controls.fullscreen">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                            </svg>
+                            Fullscreen
+                        </h4>
+                        <p data-i18n="controls.fullscreen.desc">Switch to fullscreen mode for perfect VJ show without distracting elements.</p>
+                    </div>
+                    <div class="button-item" data-button="projection">
+                        <h4 data-i18n="controls.projection">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                            </svg>
+                            Projection window
+                        </h4>
+                        <p data-i18n="controls.projection.desc">Open a separate window for projector while controlling from the main window. Perfect for live performance.</p>
+                    </div>
+                    <div class="button-item" data-button="save">
+                        <h4 data-i18n="controls.save">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+                            </svg>
+                            Save
+                        </h4>
+                        <p data-i18n="controls.save.desc">Save your entire session including all effects, media and settings to a single file. All data stays on your device.</p>
+                    </div>
+                    <div class="button-item" data-button="load">
+                        <h4 data-i18n="controls.load">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 6h-8l-2-2H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-1 8h-3v3h-2v-3h-3v-2h3V9h2v3h3v2z"/>
+                            </svg>
+                            Load
+                        </h4>
+                        <p data-i18n="controls.load.desc">Load a previously saved session. Restore all your effects, sequences and settings with one click.</p>
+                    </div>
+                    <div class="button-item" data-button="ui-toggle">
+                        <h4 data-i18n="controls.ui-toggle">
+                            <span class="ui-icons-group">
+                                <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" title="Controls">
+                                    <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h10zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/>
+                                </svg>
+                                <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" title="Sequencer">
+                                    <path d="M3 3h18v4H3zm0 7h18v4H3zm0 7h18v4H3z"/>
+                                </svg>
+                                <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" title="Right Panel">
+                                    <path d="M13 19V4h8v15h-8zm-2 0H3V4h8v15z"/>
+                                </svg>
+                            </span>
+                            Hide UI elements
+                        </h4>
+                        <p data-i18n="controls.ui-toggle.desc">Hide or show control panels (Controls, Sequencer, Right Panel). Ideal for clean fullscreen mode or dual screen setup.</p>
+                    </div>
+                    <div class="button-item" data-button="midi">
+                        <h4 data-i18n="controls.midi">MIDI IN</h4>
+                        <p data-i18n="controls.midi.desc">Selection of MIDI input device for connecting MIDI controller or keyboard. After connection, you can map MIDI signals to application controls.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Cards Grid -->
+            <div class="feature-cards-grid">
+                <!-- Sequencer Card -->
+                <div class="feature-card feature-card-fullwidth">
+                    <div class="feature-card-image">
+                        <img src="img/Haluzator-sekvencer.png" alt="Haluzator sequencer" class="feature-image">
+                    </div>
+                    <div class="feature-card-content">
+                        <h2 class="liquid" data-i18n="sequencer.title">Sequencer</h2>
+                        <p class="feature-intro" data-i18n="sequencer.intro">Powerful sequencer for creating complex visual compositions:</p>
+                        <div class="tuning-controls-columns">
+                            <ul>
+                                <li data-i18n="sequencer.item1"><strong>8 Pages:</strong> Switch between different moods and scenes of the entire show</li>
+                                <li data-i18n="sequencer.item2"><strong>Flexible steps:</strong> Set 2, 4, 8, or 16 steps according to your needs</li>
+                                <li data-i18n="sequencer.item3"><strong>Drag & Drop:</strong> Simply drag shaders, videos, 3D models or HTML onto individual steps</li>
+                                <li data-i18n="sequencer.item4"><strong>Looping:</strong> Loop any part of the sequence for repeating effects</li>
+                            </ul>
+                            <ul>
+                                <li data-i18n="sequencer.item5"><strong>Live VJ Mode:</strong> Activate steps in real time using keyboard or MIDI</li>
+                                <li data-i18n="sequencer.item6"><strong>Media combinations:</strong> Each step can contain shader, video, 3D model and HTML overlay simultaneously</li>
+                                <li data-i18n="sequencer.item7"><strong>Smooth transitions:</strong> Automatic fade effects between steps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuning Controls Card -->
+                <div class="feature-card feature-card-fullwidth">
+                    <div class="feature-card-content">
+                        <h2 class="liquid" data-i18n="tuning.title">Tuning Controls</h2>
+                        <p class="feature-intro" data-i18n="tuning.intro">Complete set of controls for fine-tuning visuals in real time:</p>
+                    </div>
+                    <div class="feature-card-image">
+                        <img src="img/Haluzator-tunning.png" alt="Haluzator tuning controls" class="feature-image">
+                    </div>
+                    <div class="feature-card-content">
+                        <div class="tuning-controls-columns">
+                            <ul>
+                                <li data-i18n="tuning.item1"><strong>TEMPO:</strong> Set playback speed (6-120 BPM)</li>
+                                <li data-i18n="tuning.item2"><strong>OVERLAY:</strong> Transparency of HTML overlay layers</li>
+                                <li data-i18n="tuning.item3"><strong>AUDIO:</strong> Strength of audio-reactive effects</li>
+                                <li data-i18n="tuning.item4"><strong>Blur & Glow:</strong> Blur and glowing effects</li>
+                                <li data-i18n="tuning.item5"><strong>Chroma & Hue Shift:</strong> Color transformations</li>
+                            </ul>
+                            <ul>
+                                <li data-i18n="tuning.item6"><strong>Mandala Segments:</strong> Symmetric effects</li>
+                                <li data-i18n="tuning.item7"><strong>Particles:</strong> Particle systems</li>
+                                <li data-i18n="tuning.item8"><strong>Saturation:</strong> Color intensity and saturation</li>
+                                <li data-i18n="tuning.item9"><strong>Speed, Zoom:</strong> Dynamic parameters</li>
+                                <li data-i18n="tuning.item10"><strong>Levels:</strong> Shadows, Midtones, Highlights for professional color grading</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shaders Library Card -->
+                <div class="feature-card feature-card-horizontal">
+                    <div class="feature-card-image">
+                        <img src="img/Haluzator-shaders.png" alt="Haluzator shader library" class="feature-image">
+                    </div>
+                    <div class="feature-card-content">
+                        <h2 class="liquid" data-i18n="shaders.title">Shader Library</h2>
+                        <p class="feature-intro" data-i18n="shaders.intro">Extensive collection of professional visual effects:</p>
+                        <ul>
+                            <li data-i18n="shaders.item1"><strong>150+ pre-made shaders:</strong> From abstract fractals through particle storms to retro glitch art</li>
+                            <li data-i18n="shaders.item2"><strong>Categorization:</strong> Easy search by effect type</li>
+                            <li data-i18n="shaders.item3"><strong>Instant preview:</strong> See the result before applying</li>
+                            <li data-i18n="shaders.item4"><strong>Custom shaders:</strong> Create your own effects in GLSL code</li>
+                            <li data-i18n="shaders.item5"><strong>Monaco Editor:</strong> Professional editor with syntax highlighting and autocomplete</li>
+                            <li data-i18n="shaders.item6"><strong>Shader combinations:</strong> Combine multiple shaders for unique effects</li>
+                            <li data-i18n="shaders.item7"><strong>Export & Import:</strong> Share your shaders with the community</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Media Library Card -->
+                <div class="feature-card feature-card-horizontal">
+                    <div class="feature-card-content">
+                        <h2 class="liquid" data-i18n="media.title">Media Library</h2>
+                        <p class="feature-intro" data-i18n="media.intro">Upload your own photos and videos - this is the main purpose of the application:</p>
+                        <ul>
+                            <li data-i18n="media.item1"><strong>Your photos:</strong> Upload photos from vacation, celebrations or any other moments. Support for all common formats (JPG, PNG, GIF, WebP).</li>
+                            <li data-i18n="media.item2"><strong>Your videos:</strong> Load your own video clips and apply visual effects to them in real time. Perfect for home projection.</li>
+                            <li data-i18n="media.item3"><strong>3D Models (.obj):</strong> Optionally add 3D models for even more interesting effects.</li>
+                            <li data-i18n="media.item4"><strong>HTML Overlay:</strong> Add custom HTML content with CSS and JavaScript for interactive layers.</li>
+                            <li data-i18n="media.item5"><strong>Simple upload:</strong> Simply drag files into the application or use the button to select.</li>
+                            <li data-i18n="media.item6"><strong>Local storage:</strong> All your media is stored locally - no uploading to servers.</li>
+                            <li data-i18n="media.item7"><strong>Free for everyone:</strong> The application is completely free and available to everyone.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card-image">
+                        <img src="img/Haluzator-media.png" alt="Haluzator media library" class="feature-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="performance">
+        <div class="container">
+            <h2 class="section-title liquid" data-i18n="performance.title">Simple controls for everyone</h2>
+            <p class="section-subtitle" data-i18n="performance.subtitle">Haluzator is designed so that anyone can use it - from beginners to advanced users.</p>
+            <div class="grid-3">
+                <div class="feature-box">
+                    <h3 data-i18n="performance.simple.title">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/>
+                        </svg>
+                        Simple controls
+                    </h3>
+                    <p data-i18n="performance.simple.desc">Drag files, select effect and play. No complicated setup.</p>
+                </div>
+                <div class="feature-box">
+                    <h3 data-i18n="performance.audio.title">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                        Audio reactivity
+                    </h3>
+                    <p data-i18n="performance.audio.desc">Connect microphone or music and let effects react to sound.</p>
+                </div>
+                <div class="feature-box">
+                    <h3 data-i18n="performance.home.title">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 3H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.11-.9-2-2-2zm0 14H3V5h18v12zm-5.01-4H17v-4h-1.01v4z"/>
+                        </svg>
+                        Home projection
+                    </h3>
+                    <p data-i18n="performance.home.desc">Perfect for projection on wall at home, at parties or when meeting with friends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title liquid" data-i18n="howitworks.title">How it works?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 data-i18n="howitworks.step1.title">Upload</h3>
+                    <p data-i18n="howitworks.step1.desc">Upload your photos or videos - simply drag files into the application.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 data-i18n="howitworks.step2.title">Choose effect</h3>
+                    <p data-i18n="howitworks.step2.desc">Choose one of 150+ visual effects and apply it to your media.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 data-i18n="howitworks.step3.title">Project</h3>
+                    <p data-i18n="howitworks.step3.desc">Start with <em>Spacebar</em> and project your amazing show!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="users">
+        <div class="container">
+
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slide active">
+                        <div class="card">
+                            <h3 data-i18n="users.card1.title">For everyone with photos and videos</h3>
+                            <p class="card-subtitle" data-i18n="users.card1.subtitle">Project your memories with amazing effects</p>
+                            <div class="card-image">
+                                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Rodina s fotoaparátem -->
+                                    <circle cx="100" cy="75" r="60" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="80" cy="60" r="8" fill="currentColor" opacity="0.6"/>
+                                    <path d="M70 75 Q80 70 90 75 Q80 80 70 75" fill="currentColor" opacity="0.4"/>
+                                    <circle cx="120" cy="60" r="8" fill="currentColor" opacity="0.6"/>
+                                    <path d="M110 75 Q120 70 130 75 Q120 80 110 75" fill="currentColor" opacity="0.4"/>
+                                    <!-- Fotoaparát -->
+                                    <rect x="85" y="90" width="30" height="20" rx="2" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                    <circle cx="100" cy="100" r="5" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="100" cy="100" r="3" fill="currentColor" opacity="0.2"/>
+                                    <!-- Vzpomínky jako fotky -->
+                                    <rect x="30" y="30" width="25" height="18" rx="1" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1"/>
+                                    <circle cx="42" cy="38" r="3" fill="currentColor" opacity="0.3"/>
+                                    <rect x="145" y="30" width="25" height="18" rx="1" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1"/>
+                                    <circle cx="157" cy="38" r="3" fill="currentColor" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <p class="card-story" data-i18n="users.card1.story">
+                                Do you have hundreds of photos from vacation, videos from celebrations or family gatherings? Haluzator allows you to transform these memories into an amazing visual show. Upload your photos and videos, apply professional effects and project them on the wall during family evenings or celebrations. Create your own digital gallery that comes alive thanks to dynamic transitions and audio-reactive effects. Your memories thus gain a new dimension and become part of unforgettable moments.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card">
+                            <h3 data-i18n="users.card2.title">For home users</h3>
+                            <p class="card-subtitle" data-i18n="users.card2.subtitle">Create amazing atmosphere at home celebrations</p>
+                            <div class="card-image">
+                                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Dům s osvětleným oknem -->
+                                    <rect x="60" y="50" width="80" height="70" rx="2" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="70" y="60" width="25" height="20" fill="currentColor" opacity="0.3"/>
+                                    <rect x="105" y="60" width="25" height="20" fill="currentColor" opacity="0.3"/>
+                                    <path d="M60 50 L100 30 L140 50" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.15"/>
+                                    <!-- Projektor světlo -->
+                                    <path d="M100 30 L50 80 L50 100 L100 120 L150 100 L150 80 Z" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+                                    <!-- Lidé v domě -->
+                                    <circle cx="82" cy="75" r="4" fill="currentColor" opacity="0.5"/>
+                                    <path d="M78 82 Q82 80 86 82" fill="currentColor" opacity="0.4"/>
+                                    <circle cx="118" cy="75" r="4" fill="currentColor" opacity="0.5"/>
+                                    <path d="M114 82 Q118 80 122 82" fill="currentColor" opacity="0.4"/>
+                                    <!-- Atmosféra - částice -->
+                                    <circle cx="40" cy="40" r="2" fill="currentColor" opacity="0.3"/>
+                                    <circle cx="160" cy="45" r="2" fill="currentColor" opacity="0.3"/>
+                                    <circle cx="50" cy="110" r="2" fill="currentColor" opacity="0.3"/>
+                                    <circle cx="150" cy="105" r="2" fill="currentColor" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <p class="card-story" data-i18n="users.card2.story">
+                                Want to create an unforgettable atmosphere at a birthday party, wedding or just when meeting with friends? Haluzator is the ideal solution for home projection. Connect a projector or use a large TV, upload photos of guests or thematic videos and let them pulse to the rhythm of music. With audio-reactive effects, your show automatically synchronizes with the music you play. Create a professional atmosphere without the need for complicated setup - everything works simply and intuitively.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="card">
+                            <h3 data-i18n="users.card3.title">For creatives and experimenters</h3>
+                            <p class="card-subtitle" data-i18n="users.card3.subtitle">Experiment with graphics without limits - free and simple</p>
+                            <div class="card-image">
+                                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Kreativní workspace -->
+                                    <rect x="40" y="40" width="120" height="80" rx="2" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="2"/>
+                                    <!-- Abstraktní tvary -->
+                                    <circle cx="70" cy="60" r="12" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M110 55 L125 70 L110 85 L95 70 Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M140 65 Q155 55 160 70 Q155 85 140 75 Q145 70 140 65" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                                    <!-- Vlnky a efekty -->
+                                    <path d="M50 100 Q60 95 70 100 T90 100" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <path d="M110 100 Q120 95 130 100 T150 100" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <!-- Barevné částice -->
+                                    <circle cx="60" cy="45" r="3" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="130" cy="50" r="3" fill="currentColor" opacity="0.5"/>
+                                    <circle cx="150" cy="90" r="3" fill="currentColor" opacity="0.5"/>
+                                    <!-- Kreativní nástroje -->
+                                    <path d="M45 110 L55 105 M50 105 L50 115" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                                    <path d="M155 110 L145 105 M150 105 L150 115" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                                </svg>
+                            </div>
+                            <p class="card-story" data-i18n="users.card3.story">
+                                Are you an artist, designer or just someone who loves experimenting with graphics? Haluzator opens endless possibilities for creative expression. Create your own shaders in GLSL, combine effects, experiment with 3D models and HTML overlay layers. With the professional Monaco editor, you have full control over every aspect of visuals. Everything is free, without restrictions and without the need for complicated setup. Share your creations with the community or use them for your own projects. The limits exist only in your imagination.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="carousel-indicator" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="carousel-indicator" data-slide="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="cta-final">
+        <div class="container">
+            <h2 class="section-title liquid" data-i18n="download.title">Start projecting your photos and videos</h2>
+            <p data-i18n="download.text">Download the application for free, upload your photos and videos and create an amazing visual show. All settings and media are stored locally on your computer.</p>
+
+            <div class="download-box">
+                <h3 data-i18n="download.box.title">Download Haluzator for free</h3>
+                <p data-i18n="download.box.subtitle">Windows version | Web version - available to everyone</p>
+                <a href="#" data-download-url target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" data-i18n="download.button">Download now</a>
+                <p class="download-warning" data-i18n="download.warning"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">&copy; 2025 Haluzator. All rights reserved.</p>
+            <div class="footer-contacts">
+                <a href="https://www.facebook.com/qwanap/" target="_blank" rel="noopener noreferrer" class="footer-link" data-i18n="footer.facebook">Facebook</a>
+                <span class="footer-separator">|</span>
+                <a href="#" class="footer-link footer-email" id="footer-email" data-i18n="footer.email">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="bg-animation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
