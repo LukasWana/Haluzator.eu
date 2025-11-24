@@ -1,6 +1,6 @@
 // Configuration - URLs for download and demo (update these in one place)
 const APP_CONFIG = {
-    downloadUrl: 'https://github.com/LukasWana/Haluzator-stable/releases/download/v1.0.3/Haluzator-1.0.3-portable.exe',
+    downloadUrl: 'https://github.com/LukasWana/Haluzator-stable/releases/download/v1.0.4/Haluzator-1.0.4-portable.exe',
     demoUrl: 'https://haluzator-shaders-images-videos-3d-html-759158123051.us-west1.run.app/'
 };
 
