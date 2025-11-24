@@ -155,6 +155,7 @@ Default language: English
             'download.box.title': 'Download Haluzator for free',
             'download.box.subtitle': 'Windows version | Web version - available to everyone',
             'download.button': 'Download now',
+            'download.warning': 'Note: The application is not digitally signed. When Windows shows a security warning, click "More info" or "More" and then "Run anyway" to proceed.',
 
             // Footer
             'footer.copyright': '© 2025 Haluzator. All rights reserved.',
@@ -308,6 +309,7 @@ Default language: English
             'download.box.title': 'Stáhněte si Haluzator zdarma',
             'download.box.subtitle': 'Verze pro Windows | Webová verze - dostupné pro každého',
             'download.button': 'Stáhnout nyní',
+            'download.warning': 'Poznámka: Aplikace není digitálně podepsaná. Když Windows zobrazí bezpečnostní varování, klikněte na "Další informace" nebo "Více" a poté na "Přesto spustit" pro pokračování.',
 
             // Footer
             'footer.copyright': '© 2025 Haluzator. Všechna práva vyhrazena.',
@@ -461,6 +463,7 @@ Default language: English
             'download.box.title': 'Stiahnite si Haluzator zdarma',
             'download.box.subtitle': 'Verzia pre Windows | Webová verzia - dostupné pre každého',
             'download.button': 'Stiahnuť teraz',
+            'download.warning': 'Poznámka: Aplikácia nie je digitálne podpísaná. Keď Windows zobrazí bezpečnostné varovanie, kliknite na "Ďalšie informácie" alebo "Viac" a potom na "Napriek tomu spustiť" pre pokračovanie.',
 
             // Footer
             'footer.copyright': '© 2025 Haluzator. Všetky práva vyhradené.',
@@ -614,6 +617,7 @@ Default language: English
             'download.box.title': 'Laden Sie Haluzator kostenlos herunter',
             'download.box.subtitle': 'Windows-Version | Web-Version - für alle verfügbar',
             'download.button': 'Jetzt herunterladen',
+            'download.warning': 'Hinweis: Die Anwendung ist nicht digital signiert. Wenn Windows eine Sicherheitswarnung anzeigt, klicken Sie auf "Weitere Informationen" oder "Mehr" und dann auf "Trotzdem ausführen", um fortzufahren.',
 
             // Footer
             'footer.copyright': '© 2025 Haluzator. Alle Rechte vorbehalten.',
@@ -767,6 +771,7 @@ Default language: English
             'download.box.title': 'Pobierz Haluzator za darmo',
             'download.box.subtitle': 'Wersja Windows | Wersja internetowa - dostępna dla wszystkich',
             'download.button': 'Pobierz teraz',
+            'download.warning': 'Uwaga: Aplikacja nie jest podpisana cyfrowo. Gdy Windows wyświetli ostrzeżenie bezpieczeństwa, kliknij "Więcej informacji" lub "Więcej", a następnie "Uruchom mimo to", aby kontynuować.',
 
             // Footer
             'footer.copyright': '© 2025 Haluzator. Wszelkie prawa zastrzeżone.',
@@ -920,6 +925,7 @@ Default language: English
             'download.box.title': 'Téléchargez Haluzator gratuitement',
             'download.box.subtitle': 'Version Windows | Version Web - disponible pour tous',
             'download.button': 'Télécharger maintenant',
+            'download.warning': 'Note: L\'application n\'est pas signée numériquement. Lorsque Windows affiche un avertissement de sécurité, cliquez sur "Plus d\'infos" ou "Plus" puis sur "Exécuter quand même" pour continuer.',
 
             // Footer
             'footer.copyright': '© 2025 Haluzator. Tous droits réservés.',
@@ -1073,6 +1079,7 @@ Default language: English
             'download.box.title': 'Descarga Haluzator gratis',
             'download.box.subtitle': 'Versión Windows | Versión Web - disponible para todos',
             'download.button': 'Descargar ahora',
+            'download.warning': 'Nota: La aplicación no está firmada digitalmente. Cuando Windows muestre una advertencia de seguridad, haga clic en "Más información" o "Más" y luego en "Ejecutar de todos modos" para continuar.',
 
             // Footer
             'footer.copyright': '© 2025 Haluzator. Todos los derechos reservados.',
@@ -1226,6 +1233,7 @@ Default language: English
             'download.box.title': 'Завантажте Haluzator безкоштовно',
             'download.box.subtitle': 'Версія Windows | Веб-версія - доступна для всіх',
             'download.button': 'Завантажити зараз',
+            'download.warning': 'Примітка: Додаток не має цифрового підпису. Коли Windows відображає попередження безпеки, натисніть "Докладніше" або "Більше", а потім "Все одно запустити", щоб продовжити.',
 
             // Footer
             'footer.copyright': '© 2025 Haluzator. Всі права захищені.',

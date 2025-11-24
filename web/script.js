@@ -1,4 +1,18 @@
+// Configuration - URLs for download and demo (update these in one place)
+const APP_CONFIG = {
+    downloadUrl: 'https://github.com/LukasWana/Haluzator-stable/releases/download/v1.0.3/Haluzator-1.0.3-portable.exe',
+    demoUrl: 'https://haluzator-shaders-images-videos-3d-html-759158123051.us-west1.run.app/'
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Set download and demo URLs from configuration
+    document.querySelectorAll('[data-download-url]').forEach(link => {
+        link.href = APP_CONFIG.downloadUrl;
+    });
+    document.querySelectorAll('[data-demo-url]').forEach(link => {
+        link.href = APP_CONFIG.demoUrl;
+    });
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
